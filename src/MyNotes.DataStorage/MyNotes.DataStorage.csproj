@@ -40,10 +40,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DomainObjects\Entities\Account.cs" />
+    <Compile Include="DomainObjects\Entities\Transaction.cs" />
+    <Compile Include="DomainObjects\Entities\Enums.cs" />
+    <Compile Include="DomainObjects\Entities\User.cs" />
+    <Compile Include="DomainObjects\Entities\Group.cs" />
+    <Compile Include="DomainObjects\Entities\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="DomainObjects\Entities\" />
     <Folder Include="DomainObjects\Mappings\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -56,6 +56,12 @@
   <ItemGroup>
     <Folder Include="Dtos\" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MyNotes.DataStorage\MyNotes.DataStorage.csproj">
+      <Project>{E69C3DC6-6AFD-4D72-9A62-5C5FFB37D231}</Project>
+      <Name>MyNotes.DataStorage</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
