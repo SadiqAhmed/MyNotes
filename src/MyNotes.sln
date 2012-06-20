@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 11.00
 # Visual Studio 2010
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotes.UI.Web", "MyNotes.UI.Web\MyNotes.UI.Web.csproj", "{CBC2BF65-862C-4A59-B01E-2AE4EB99C4BF}"
+	ProjectSection(ProjectDependencies) = postProject
+		{6E6F81E7-F98C-44B0-A397-102E84EDB8C9} = {6E6F81E7-F98C-44B0-A397-102E84EDB8C9}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotes.UI.Web.Tests", "MyNotes.UI.Web.Tests\MyNotes.UI.Web.Tests.csproj", "{9F35230A-F73A-4E3C-AAEC-0A7323E3D07F}"
 EndProject

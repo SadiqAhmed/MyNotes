@@ -4,7 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Security;
 using System.Web.SessionState;
-using MyNotes.Services.Setup.StartupTask;
+using MyNotes.Services.Setup.StartupTasks;
 
 namespace MyNotes.Services
 {

@@ -3,3 +3,4 @@ C:\Projects\Git\MyNotes\src\MyNotes.Console\bin\x86\ConsoleApp\MyNotes.Console.p
 C:\Projects\Git\MyNotes\src\MyNotes.Console\obj\x86\ConsoleApp\MyNotes.Console.exe
 C:\Projects\Git\MyNotes\src\MyNotes.Console\obj\x86\ConsoleApp\MyNotes.Console.pdb
 C:\Projects\Git\MyNotes\src\MyNotes.Console\bin\x86\ConsoleApp\MyNotes.Console.exe.config
+C:\Projects\Git\MyNotes\src\MyNotes.Console\obj\x86\ConsoleApp\MyNotes.Console.csprojResolveAssemblyReference.cache

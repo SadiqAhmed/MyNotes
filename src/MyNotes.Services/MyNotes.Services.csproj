@@ -150,10 +150,9 @@
     <Compile Include="Setup\Base\HostFactory\UnityServiceHostFactory.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Setup\StartupTask\IRegisterDependency.cs" />
-    <Compile Include="Setup\StartupTask\Registrations\MiscDependency.cs" />
-    <Compile Include="Setup\StartupTask\Registrations\ServiceDependency.cs" />
-    <Compile Include="Setup\StartupTask\ServiceDependencyBuilder.cs" />
+    <Compile Include="Setup\StartupTasks\IRegisterDependency.cs" />
+    <Compile Include="Setup\StartupTasks\Registrations\LoggerDependency.cs" />
+    <Compile Include="Setup\StartupTasks\ServiceDependencyBuilder.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

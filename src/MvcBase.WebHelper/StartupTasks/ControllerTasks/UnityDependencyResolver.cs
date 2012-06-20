@@ -8,24 +8,24 @@
 
     public class UnityDependencyResolver : IDependencyResolver
     {
-        private IUnityContainer _container;
+        private IUnityContainer _unityContainer;
 
-        public UnityDependencyResolver(IUnityContainer container)
+        public UnityDependencyResolver(IUnityContainer unityContainer)
         {
-            _container = container;
+            _unityContainer = unityContainer;
         }
 
         public object GetService(Type serviceType)
         {
-            if ((serviceType.IsClass && !serviceType.IsAbstract) || _container.IsRegistered(serviceType))
-                return _container.Resolve(serviceType);
+            if ((serviceType.IsClass && !serviceType.IsAbstract) || _unityContainer.IsRegistered(serviceType))
+                return _unityContainer.Resolve(serviceType);
             return null;
         }
 
         public IEnumerable<object> GetServices(Type serviceType)
         {
-            if ((serviceType.IsClass && !serviceType.IsAbstract) || _container.IsRegistered(serviceType))
-                return _container.ResolveAll(serviceType);
+            if ((serviceType.IsClass && !serviceType.IsAbstract) || _unityContainer.IsRegistered(serviceType))
+                return _unityContainer.ResolveAll(serviceType);
 
             return new object[] { };
         }

@@ -6,24 +6,24 @@
 
     public class UnityServiceHost: ServiceHost
     {
-        public IUnityContainer Container { set; get; }
+        public IUnityContainer UnityContainer { set; get; }
     
         public UnityServiceHost()
             : base()
         {
-            Container = new UnityContainer();
+            UnityContainer = new UnityContainer();
         }
     
         public UnityServiceHost(Type serviceType, params Uri[] baseAddresses)
             : base(serviceType, baseAddresses)
         {
-            Container = new UnityContainer();
+            UnityContainer = new UnityContainer();
         }
     
         protected override void OnOpening()
         {
             if (this.Description.Behaviors.Find<UnityServiceBehavior>() == null)
-                this.Description.Behaviors.Add(new UnityServiceBehavior(Container));
+                this.Description.Behaviors.Add(new UnityServiceBehavior(UnityContainer));
     
             base.OnOpening();
         }

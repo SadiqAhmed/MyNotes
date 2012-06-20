@@ -5,7 +5,7 @@
     using System.Configuration;
     using System.ServiceModel;
     using System.ServiceModel.Activation;
-    using MyNotes.Services.Setup.StartupTask;
+    using MyNotes.Services.Setup.StartupTasks;
 
     public class UnityServiceHostFactory : ServiceHostFactory
     {
@@ -13,7 +13,7 @@
                                             Type serviceType, Uri[] baseAddresses)
         {
             UnityServiceHost serviceHost = new UnityServiceHost(serviceType, baseAddresses);
-            serviceHost.Container = ServiceDependencyBuilder.Container;
+            serviceHost.UnityContainer = ServiceDependencyBuilder.UnityContainer;
             return serviceHost;
         }
     }

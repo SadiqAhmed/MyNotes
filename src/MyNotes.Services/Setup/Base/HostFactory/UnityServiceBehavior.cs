@@ -19,7 +19,7 @@
         public UnityServiceBehavior(IUnityContainer unity)
         {
             InstanceProvider = new UnityInstanceProvider();
-            InstanceProvider.Container = unity;
+            InstanceProvider.UnityContainer = unity;
         }
 
         public void ApplyDispatchBehavior(ServiceDescription serviceDescription, ServiceHostBase serviceHostBase)

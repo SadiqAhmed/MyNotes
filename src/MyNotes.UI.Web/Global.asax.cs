@@ -1,14 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Http;
-using System.Web.Mvc;
-using System.Web.Optimization;
-using System.Web.Routing;
-
-namespace MyNotes.UI.Web
+﻿namespace MyNotes.UI.Web
 {
+    using System.Web.Http;
+    using System.Web.Mvc;
+    using System.Web.Optimization;
+    using System.Web.Routing;
+    using MvcBase.WebHelper.StartupTasks;
+    using System.Reflection;
+
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
 
@@ -43,7 +41,7 @@ namespace MyNotes.UI.Web
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            BundleTable.Bundles.RegisterTemplateBundles();
+            (new RegisterStartupTasks()).Execute(Assembly.GetExecutingAssembly().GetTypes());
         }
     }
 }

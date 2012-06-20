@@ -9,12 +9,12 @@
 
     public class RegisterStartupTasks
     {
-        public IUnityContainer Execute()
+        public IUnityContainer Execute(Type[] types)
         {
-            IUnityContainer container = new UnityContainer();
+            IUnityContainer unityContainer = new UnityContainer();
 
             // setup components
-            var components = from t in Assembly.GetExecutingAssembly().GetTypes()
+            var components = from t in types
                             where t.GetInterfaces().Contains(typeof(IIncludeComponents))
                                      && null != t.GetConstructor(Type.EmptyTypes)
                             select Activator.CreateInstance(t) as IIncludeComponents;
@@ -23,17 +23,17 @@
                 component.Setup();
 
             // register dependencies
-            var dependencies = from t in Assembly.GetExecutingAssembly().GetTypes()
+            var dependencies = from t in types
                             where t.GetInterfaces().Contains(typeof(IRegisterDependency))
                                      && null != t.GetConstructor(Type.EmptyTypes)
                                select Activator.CreateInstance(t) as IRegisterDependency;
 
             foreach (var dependency in dependencies)
-                dependency.Inject(container);
+                dependency.Inject(unityContainer);
 
-            DependencyResolver.SetResolver(new UnityDependencyResolver(container));
+            DependencyResolver.SetResolver(new UnityDependencyResolver(unityContainer));
 
-            return container;
+            return unityContainer;
         }
     }
 }

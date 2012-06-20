@@ -8,7 +8,7 @@
 
     public class UnityInstanceProvider: IInstanceProvider
     {
-        public IUnityContainer Container { set; get; }
+        public IUnityContainer UnityContainer { set; get; }
         
         public Type ServiceType { set; get; }
     
@@ -20,12 +20,12 @@
         public UnityInstanceProvider(Type type)
         {
             ServiceType = type;
-            Container = new UnityContainer();
+            UnityContainer = new UnityContainer();
         }
     
         public object GetInstance(InstanceContext instanceContext, Message message)
         {
-            return Container.Resolve(ServiceType);
+            return UnityContainer.Resolve(ServiceType);
         }
     
         public object GetInstance(InstanceContext instanceContext)
