@@ -195,6 +195,8 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Setup\StartupTasks\Component\CssBundles.cs" />
+    <Compile Include="Setup\StartupTasks\Component\JsBundles.cs" />
     <Compile Include="Setup\StartupTasks\Registration\ServiceDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registration\LoggerDependency.cs" />
     <Compile Include="Templates\SharedController.generated.cs">
