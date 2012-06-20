@@ -45,6 +45,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotes.Console", "MyNotes.
 		{6E6F81E7-F98C-44B0-A397-102E84EDB8C9} = {6E6F81E7-F98C-44B0-A397-102E84EDB8C9}
 	EndProjectSection
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Setup", "Setup", "{8E5650C4-E167-45EE-AC9C-6AC704834BB3}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MyNotes.WebSetup", "MyNotes.WebSetup\MyNotes.WebSetup.vdproj", "{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		ConsoleApp|Any CPU = ConsoleApp|Any CPU
@@ -209,6 +213,21 @@ Global
 		{C313AF78-9CFA-444C-891C-BB002849D4D4}.WebApp|Mixed Platforms.ActiveCfg = WebApp|x86
 		{C313AF78-9CFA-444C-891C-BB002849D4D4}.WebApp|x86.ActiveCfg = WebApp|x86
 		{C313AF78-9CFA-444C-891C-BB002849D4D4}.WebApp|x86.Build.0 = WebApp|x86
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.ConsoleApp|Any CPU.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.ConsoleApp|Mixed Platforms.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.ConsoleApp|x86.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Debug|Any CPU.ActiveCfg = Debug
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Debug|Mixed Platforms.ActiveCfg = Debug
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Debug|x86.ActiveCfg = Debug
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Release|Any CPU.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Release|Mixed Platforms.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Release|x86.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Tests|Any CPU.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Tests|Mixed Platforms.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.Tests|x86.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.WebApp|Any CPU.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.WebApp|Mixed Platforms.ActiveCfg = Release
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B}.WebApp|x86.ActiveCfg = Release
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -220,6 +239,7 @@ Global
 		{E69C3DC6-6AFD-4D72-9A62-5C5FFB37D231} = {386B4919-9F35-4D9D-9723-ACC893AA7438}
 		{6E6F81E7-F98C-44B0-A397-102E84EDB8C9} = {386B4919-9F35-4D9D-9723-ACC893AA7438}
 		{C313AF78-9CFA-444C-891C-BB002849D4D4} = {480F8932-227E-407A-AD3B-5A8722544437}
+		{CC9FB582-D88F-40AD-A119-E9F5E1B6DC7B} = {8E5650C4-E167-45EE-AC9C-6AC704834BB3}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		EnterpriseLibraryConfigurationToolBinariesPath = packages\Unity.2.1.505.0\lib\NET35
