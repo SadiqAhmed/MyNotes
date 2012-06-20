@@ -19,12 +19,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotes.Services", "MyNotes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{38BEBC39-53DF-4D32-9F48-0BA3C43BC581}"
 	ProjectSection(SolutionItems) = preProject
-		packages\Autofac-2.6.2.859-NET40\Autofac.Configuration.dll = packages\Autofac-2.6.2.859-NET40\Autofac.Configuration.dll
-		packages\Autofac-2.6.2.859-NET40\Autofac.dll = packages\Autofac-2.6.2.859-NET40\Autofac.dll
-		packages\Autofac-2.6.2.859-NET40\Autofac.Integration.Mvc.dll = packages\Autofac-2.6.2.859-NET40\Autofac.Integration.Mvc.dll
-		packages\Autofac-2.6.2.859-NET40\Autofac.Integration.Wcf.dll = packages\Autofac-2.6.2.859-NET40\Autofac.Integration.Wcf.dll
 		packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll = packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll
 		packages\Log4net\log4net.dll = packages\Log4net\log4net.dll
+		packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll = packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll
+		packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll = packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll
+		packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll = packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll
 		packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll = packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll
 		packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll = packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll
 	EndProjectSection
