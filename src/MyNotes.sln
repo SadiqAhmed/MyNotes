@@ -22,13 +22,19 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MyNotes.Services", "MyNotes
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{38BEBC39-53DF-4D32-9F48-0BA3C43BC581}"
 	ProjectSection(SolutionItems) = preProject
+		packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll = packages\Castle.Core.2.5.2\lib\NET35\Castle.Core.dll
 		packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll = packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll
-		packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll = packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll
+		packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll = packages\FluentNHibernate.1.2.0.712\lib\FluentNHibernate.dll
+		packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll = packages\Iesi.Collections.3.1.0.4000\lib\Net35\Iesi.Collections.dll
 		packages\Log4net\log4net.dll = packages\Log4net\log4net.dll
 		packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll = packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll
 		packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll = packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll
 		packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll = packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.dll
 		packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll = packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll
+		packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll = packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll
+		packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll = packages\NHibernate.Castle.3.1.0.4000\lib\Net35\NHibernate.ByteCode.Castle.dll
+		packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll = packages\NHibernate.3.1.0.4000\lib\Net35\NHibernate.dll
+		packages\RestSharp.103.1\lib\net4\RestSharp.dll = packages\RestSharp.103.1\lib\net4\RestSharp.dll
 		packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll = packages\YUICompressor.NET.1.7.1.0\lib\net35\Yahoo.Yui.Compressor.dll
 	EndProjectSection
 EndProject
