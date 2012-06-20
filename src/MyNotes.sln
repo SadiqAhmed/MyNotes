@@ -23,6 +23,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "References", "References", "{38BEBC39-53DF-4D32-9F48-0BA3C43BC581}"
 	ProjectSection(SolutionItems) = preProject
 		packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll = packages\YUICompressor.NET.1.7.1.0\lib\net35\EcmaScript.NET.modified.dll
+		packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll = packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll
 		packages\Log4net\log4net.dll = packages\Log4net\log4net.dll
 		packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll = packages\CommonServiceLocator.1.0\lib\NET35\Microsoft.Practices.ServiceLocation.dll
 		packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll = packages\Unity.2.1.505.0\lib\NET35\Microsoft.Practices.Unity.Configuration.dll
