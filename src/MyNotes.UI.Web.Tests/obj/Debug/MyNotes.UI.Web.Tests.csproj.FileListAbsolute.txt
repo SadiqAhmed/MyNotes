@@ -1,0 +1,9 @@
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\MyNotes.UI.Web.Tests.dll.config
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\MyNotes.UI.Web.Tests.dll
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\MyNotes.UI.Web.Tests.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\MyNotes.UI.Web.dll
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\System.Web.Optimization.dll
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\bin\Debug\MyNotes.UI.Web.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\obj\Debug\MyNotes.UI.Web.Tests.csprojResolveAssemblyReference.cache
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\obj\Debug\MyNotes.UI.Web.Tests.dll
+C:\Projects\Git\MyNotes\src\MyNotes.UI.Web.Tests\obj\Debug\MyNotes.UI.Web.Tests.pdb

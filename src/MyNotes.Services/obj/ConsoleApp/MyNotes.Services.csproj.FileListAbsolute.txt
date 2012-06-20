@@ -1,0 +1,17 @@
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\MyNotes.Services.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\MyNotes.Services.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\log4net.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\MyNotes.DataStorage.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\EntityFramework.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\MyNotes.DataStorage.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\EntityFramework.xml
+C:\Projects\Git\MyNotes\src\MyNotes.Services\obj\ConsoleApp\MyNotes.Services.csprojResolveAssemblyReference.cache
+C:\Projects\Git\MyNotes\src\MyNotes.Services\obj\ConsoleApp\MyNotes.Services.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\obj\ConsoleApp\MyNotes.Services.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.Unity.dll
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.Unity.xml
+C:\Projects\Git\MyNotes\src\MyNotes.Services\bin\Microsoft.Practices.Unity.Configuration.xml

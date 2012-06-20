@@ -1,0 +1,4 @@
+C:\Projects\Git\MyNotes\src\MyNotes.Console\bin\Debug\MyNotes.Console.exe
+C:\Projects\Git\MyNotes\src\MyNotes.Console\bin\Debug\MyNotes.Console.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.Console\obj\x86\Debug\MyNotes.Console.exe
+C:\Projects\Git\MyNotes\src\MyNotes.Console\obj\x86\Debug\MyNotes.Console.pdb

@@ -1,0 +1,9 @@
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\MyNotes.DataStorage.dll.config
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\MyNotes.DataStorage.dll
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\MyNotes.DataStorage.pdb
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\EntityFramework.dll
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\System.Data.SQLite.dll
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\System.Data.SQLite.Linq.dll
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\bin\WebApp\EntityFramework.xml
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\obj\WebApp\MyNotes.DataStorage.dll
+C:\Projects\Git\MyNotes\src\MyNotes.DataStorage\obj\WebApp\MyNotes.DataStorage.pdb
