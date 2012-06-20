@@ -162,6 +162,7 @@
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Setup\StartupTasks\IRegisterDependency.cs" />
+    <Compile Include="Setup\StartupTasks\Registrations\NhibernateDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registrations\LoggerDependency.cs" />
     <Compile Include="Setup\StartupTasks\ServiceDependencyBuilder.cs" />
   </ItemGroup>

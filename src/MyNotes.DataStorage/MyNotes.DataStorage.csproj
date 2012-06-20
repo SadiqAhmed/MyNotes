@@ -111,7 +111,11 @@
     <Compile Include="DomainObjects\Entities\Group.cs" />
     <Compile Include="DomainObjects\Entities\EntityBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Setup\MyNotesContext.cs" />
+    <Compile Include="Repositories\DataBaseProxy.cs" />
+    <Compile Include="Repositories\IDataBaseProxy.cs" />
+    <Compile Include="Setup\Database\AppInterceptor.cs" />
+    <Compile Include="Setup\Database\NhibernateDatabaseContext.cs" />
+    <Compile Include="Setup\Database\IDatabaseContext.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="DomainObjects\Mappings\" />
