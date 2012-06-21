@@ -10,6 +10,7 @@
         public void Inject(IUnityContainer unityContainer)
         {
             unityContainer.RegisterInstance<IEchoService>(new EchoServiceClient());
+            //unityContainer.RegisterInstance<IUserService>(new UserServiceClient());
         }
     }
 }
