@@ -12,7 +12,10 @@
             Map(x => x.LastName)
                 .Not.Nullable();
             Map(x => x.Nickname);
-            Map(x => x.UseNickname);
+            Map(x => x.Username)
+                .Not.Nullable();
+            Map(x => x.Password)
+                .Not.Nullable();
             References(x => x.Group)
                 .Not.Nullable();
             HasMany<Account>(x => x.Accounts)

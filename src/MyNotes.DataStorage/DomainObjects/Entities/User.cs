@@ -5,6 +5,13 @@
 
     public class User : EntityBase
     {
+        protected string _nickname;
+
+        public User()
+        {
+            Accounts = new List<Account>();
+        }
+
         /// <summary>
         /// Gets or Sets the first name
         /// </summary>
@@ -18,12 +25,21 @@
         /// <summary>
         /// Gets or Sets the nick name
         /// </summary>
-        public virtual string Nickname { get; set; }
+        public virtual string Nickname
+        {
+            get { return string.IsNullOrEmpty(_nickname) ? FirstName : _nickname; }
+            set { _nickname = value; }
+        }
 
         /// <summary>
-        /// Gets or Sets the bool value to use nick name in application
+        /// Gets or Sets the user name
         /// </summary>
-        public virtual bool UseNickname { get; set; }
+        public virtual string Username { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the password
+        /// </summary>
+        public virtual string Password { get; set; }
 
         /// <summary>
         /// Gets or Sets the user group
