@@ -6,22 +6,22 @@
       <xsd:import schemaLocation="http://localhost:9089/Hosts/EchoService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
     </xsd:schema>
   </wsdl:types>
-  <wsdl:message name="IEchoService_PrintName_InputMessage">
-    <wsdl:part name="parameters" element="tns:PrintName" />
+  <wsdl:message name="IEchoService_Ping_InputMessage">
+    <wsdl:part name="parameters" element="tns:Ping" />
   </wsdl:message>
-  <wsdl:message name="IEchoService_PrintName_OutputMessage">
-    <wsdl:part name="parameters" element="tns:PrintNameResponse" />
+  <wsdl:message name="IEchoService_Ping_OutputMessage">
+    <wsdl:part name="parameters" element="tns:PingResponse" />
   </wsdl:message>
   <wsdl:portType name="IEchoService">
-    <wsdl:operation name="PrintName">
-      <wsdl:input wsaw:Action="http://tempuri.org/IEchoService/PrintName" message="tns:IEchoService_PrintName_InputMessage" />
-      <wsdl:output wsaw:Action="http://tempuri.org/IEchoService/PrintNameResponse" message="tns:IEchoService_PrintName_OutputMessage" />
+    <wsdl:operation name="Ping">
+      <wsdl:input wsaw:Action="http://tempuri.org/IEchoService/Ping" message="tns:IEchoService_Ping_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IEchoService/PingResponse" message="tns:IEchoService_Ping_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IEchoService" type="tns:IEchoService">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
-    <wsdl:operation name="PrintName">
-      <soap:operation soapAction="http://tempuri.org/IEchoService/PrintName" style="document" />
+    <wsdl:operation name="Ping">
+      <soap:operation soapAction="http://tempuri.org/IEchoService/Ping" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

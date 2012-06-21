@@ -15,8 +15,8 @@ namespace MyNotes.UI.Web.EchoServiceRef {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="EchoServiceRef.IEchoService")]
     public interface IEchoService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEchoService/PrintName", ReplyAction="http://tempuri.org/IEchoService/PrintNameResponse")]
-        string PrintName(string name);
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IEchoService/Ping", ReplyAction="http://tempuri.org/IEchoService/PingResponse")]
+        string Ping();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -46,8 +46,8 @@ namespace MyNotes.UI.Web.EchoServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public string PrintName(string name) {
-            return base.Channel.PrintName(name);
+        public string Ping() {
+            return base.Channel.Ping();
         }
     }
 }

@@ -3,9 +3,9 @@
     using System.ServiceModel;
 
     [ServiceContract]
-    public interface IEchoService
+    public interface IUserService
     {
         [OperationContract]
-        string Ping();
+        string PrintName(string name);
     }
 }

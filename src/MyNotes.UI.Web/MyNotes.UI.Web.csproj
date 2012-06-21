@@ -195,6 +195,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Service References\UserServiceRef\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Setup\StartupTasks\Component\CssBundles.cs" />
     <Compile Include="Setup\StartupTasks\Component\JsBundles.cs" />
     <Compile Include="Setup\StartupTasks\Registration\ServiceDependency.cs" />
@@ -282,6 +287,20 @@
     <Content Include="Include\Styles\jQuery\jquery.ui.slider.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.tabs.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.theme.css" />
+    <None Include="Service References\EchoServiceRef\EchoService.wsdl" />
+    <None Include="Service References\EchoServiceRef\EchoService.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\EchoServiceRef\EchoService2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceRef\UserService.disco" />
+    <None Include="Service References\UserServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\UserServiceRef\configuration.svcinfo" />
+    <None Include="Service References\UserServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <None Include="Service References\EchoServiceRef\EchoService.disco" />
     <None Include="Service References\EchoServiceRef\configuration91.svcinfo" />
     <None Include="Service References\EchoServiceRef\configuration.svcinfo" />
@@ -312,11 +331,11 @@
     <Content Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\EchoServiceRef\EchoService.wsdl" />
-    <None Include="Service References\EchoServiceRef\EchoService.xsd">
+    <None Include="Service References\UserServiceRef\UserService.wsdl" />
+    <None Include="Service References\UserServiceRef\UserService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EchoServiceRef\EchoService1.xsd">
+    <None Include="Service References\UserServiceRef\UserService1.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Templates\T4MVC.tt">
@@ -340,6 +359,7 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadataStorage Include="Service References\EchoServiceRef\" />
+    <WCFMetadataStorage Include="Service References\UserServiceRef\" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />

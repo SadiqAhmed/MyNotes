@@ -11,7 +11,7 @@
 
         public ActionResult Index()
         {
-            ViewBag.Value = EchoService.PrintName("avi");
+            ViewBag.Value = EchoService.Ping();
 
             return View();
         }
