@@ -7,26 +7,31 @@
         /// <summary>
         /// Gets or Sets the first name
         /// </summary>
-        public string FirstName { get; set; }
+        public virtual string FirstName { get; set; }
 
         /// <summary>
         /// Gets or Sets the last name
         /// </summary>
-        public string LastName { get; set; }
+        public virtual string LastName { get; set; }
 
         /// <summary>
         /// Gets or Sets the nick name
         /// </summary>
-        public string Nickname { get; set; }
+        public virtual string Nickname { get; set; }
 
         /// <summary>
         /// Gets or Sets the bool value to use nick name in application
         /// </summary>
-        public bool UseNickname { get; set; }
+        public virtual bool UseNickname { get; set; }
 
         /// <summary>
-        /// Gets or Sets the group id
+        /// Gets or Sets the user group
         /// </summary>
-        public Group GroupId { get; set; }
+        public virtual Group Group { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the list of accounts with the user
+        /// </summary>
+        public virtual Account Accounts { get; set; }
     }
 }

@@ -110,6 +110,11 @@
     <Compile Include="DomainObjects\Entities\User.cs" />
     <Compile Include="DomainObjects\Entities\Group.cs" />
     <Compile Include="DomainObjects\Entities\EntityBase.cs" />
+    <Compile Include="DomainObjects\Mappings\AccountMap.cs" />
+    <Compile Include="DomainObjects\Mappings\TransactionMap.cs" />
+    <Compile Include="DomainObjects\Mappings\UserMap.cs" />
+    <Compile Include="DomainObjects\Mappings\GroupMap.cs" />
+    <Compile Include="DomainObjects\Mappings\EntityBaseMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repositories\DataBaseProxy.cs" />
     <Compile Include="Repositories\IDataBaseProxy.cs" />
@@ -117,9 +122,7 @@
     <Compile Include="Setup\Database\NhibernateDatabaseContext.cs" />
     <Compile Include="Setup\Database\IDatabaseContext.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DomainObjects\Mappings\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />

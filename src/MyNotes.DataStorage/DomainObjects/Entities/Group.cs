@@ -7,6 +7,11 @@
         /// <summary>
         /// Gets or Sets the group name
         /// </summary>
-        public string Name { get; set; }
+        public virtual string Name { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the list of users in the group
+        /// </summary>
+        public virtual User Users { get; set; }
     }
 }

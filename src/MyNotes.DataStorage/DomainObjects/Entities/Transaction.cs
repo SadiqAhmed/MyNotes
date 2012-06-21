@@ -7,26 +7,26 @@
         /// <summary>
         /// Gets or Sets the year of transaction
         /// </summary>
-        public int Year { get; set; }
+        public virtual int Year { get; set; }
 
         /// <summary>
         /// Gets or Sets the month of transaction
         /// </summary>
-        public int Month { get; set; }
+        public virtual int Month { get; set; }
 
         /// <summary>
         /// Gets or Sets the balance amount before transaction
         /// </summary>
-        public decimal Balance { get; set; }
+        public virtual decimal Balance { get; set; }
 
         /// <summary>
         /// Gets or Sets the incoming amount
         /// </summary>
-        public decimal Incoming { get; set; }
+        public virtual decimal Incoming { get; set; }
 
         /// <summary>
-        /// Gets or Sets the account id
+        /// Gets or Sets the transaction account
         /// </summary>
-        public Account AccountId { get; set; }
+        public virtual Account Account { get; set; }
     }
 }

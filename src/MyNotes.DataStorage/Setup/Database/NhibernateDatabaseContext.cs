@@ -10,32 +10,18 @@
 
     public class NhibernateDatabaseContext : IDatabaseContext
     {
-        private static ISessionFactory _sessionFactory;
-        private readonly string _dbFilePath = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, "_myNotesDatabase.db");
+        private readonly string _dbFilePath = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, "/Database/_myNotesDatabase.db");
 
-        private NhibernateDatabaseContext()
+        public NhibernateDatabaseContext()
         {
-            CreateSessionFactory();
+            SessionFactory = CreateSessionFactory();
         }
 
-        public ISessionFactory SessionFactory 
-        {
-            get { return _sessionFactory ?? (_sessionFactory = (new NhibernateDatabaseContext()).CreateSessionFactory()); }
-        }
+        public ISessionFactory SessionFactory { get; private set; }
 
         public ISession Session
         {
             get { return SessionFactory.OpenSession(); }
-        }
-
-        public static ISessionFactory Initialize()
-        {
-            if (_sessionFactory == null)
-            {
-                _sessionFactory = (new NhibernateDatabaseContext()).CreateSessionFactory();
-            }
-
-            return _sessionFactory;
         }
 
         private ISessionFactory CreateSessionFactory()

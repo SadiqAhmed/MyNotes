@@ -9,9 +9,9 @@
     {
         public void Inject(IUnityContainer unityContainer)
         {
-            var sessionFactory = NhibernateDatabaseContext.Initialize();
+            IDatabaseContext dataContext = new NhibernateDatabaseContext();
 
-            unityContainer.RegisterInstance<ISessionFactory>(sessionFactory, new ContainerControlledLifetimeManager());
+            unityContainer.RegisterInstance<ISessionFactory>(dataContext.SessionFactory, new ContainerControlledLifetimeManager());
         }
     }
 }

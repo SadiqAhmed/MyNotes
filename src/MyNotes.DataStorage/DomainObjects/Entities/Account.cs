@@ -7,11 +7,16 @@
         /// <summary>
         /// Gets or Sets the currency type
         /// </summary>
-        public CurrencyType CurrencyType { get; set; }
+        public virtual CurrencyType CurrencyType { get; set; }
 
         /// <summary>
-        /// Gets or Sets the user id
+        /// Gets or Sets the user of the account
         /// </summary>
-        public User UserId { get; set; }
+        public virtual User User { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the list of transactions in this account
+        /// </summary>
+        public virtual Transaction Transactions { get; set; }
     }
 }

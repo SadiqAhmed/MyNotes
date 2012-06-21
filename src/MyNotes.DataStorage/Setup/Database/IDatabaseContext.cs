@@ -7,7 +7,5 @@
         ISessionFactory SessionFactory {get; }
 
         ISession Session { get; }
-
-        void CreateSessionFactory();
     }
 }
