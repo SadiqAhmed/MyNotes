@@ -27,6 +27,6 @@
         /// <summary>
         /// Gets or Sets the transaction account
         /// </summary>
-        public virtual Account Account { get; set; }
+        public virtual Account Account { get; protected set; }
     }
 }

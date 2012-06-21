@@ -13,7 +13,11 @@
                 .Not.Nullable();
             Map(x => x.Nickname);
             Map(x => x.UseNickname);
-            References(x => x.Group);
+            References(x => x.Group)
+                .Not.Nullable();
+            HasMany<Account>(x => x.Accounts)
+                .Inverse()
+                .AsBag();
         }
     }
 }

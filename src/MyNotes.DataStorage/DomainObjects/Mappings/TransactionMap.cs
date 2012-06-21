@@ -15,7 +15,8 @@
                 .Not.Nullable();
             Map(x => x.Incoming)
                 .Not.Nullable();
-            References(x => x.Account);
+            References(x => x.Account)
+                .Not.Nullable();
         }
     }
 }

@@ -1,6 +1,7 @@
 ﻿namespace MyNotes.DataStorage.DomainObjects.Entities
 {
     using System;
+    using System.Collections.Generic;
 
     public class User : EntityBase
     {
@@ -27,11 +28,11 @@
         /// <summary>
         /// Gets or Sets the user group
         /// </summary>
-        public virtual Group Group { get; set; }
+        public virtual Group Group { get; protected set; }
 
         /// <summary>
         /// Gets or Sets the list of accounts with the user
         /// </summary>
-        public virtual Account Accounts { get; set; }
+        public virtual IList<Account> Accounts { get; set; }
     }
 }

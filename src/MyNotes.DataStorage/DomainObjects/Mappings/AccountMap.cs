@@ -9,7 +9,11 @@
         {
             Map(x => x.CurrencyType)
                 .Not.Nullable();
-            References(x => x.User);
+            References(x => x.User)
+                .Not.Nullable();
+            HasMany<Transaction>(x => x.Transactions)
+                .Inverse()
+                .AsBag();
         }
     }
 }
