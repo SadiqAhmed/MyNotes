@@ -4,8 +4,8 @@
     using System.ServiceModel;
     using log4net;
     using MyNotes.Services.Contracts;
+    using MyNotes.Services.Dtos;
 
-    // NOTE: You can use the "Rename" command on the "Refactor" menu to change the class name "EchoService" in code, svc and config file together.
     public class UserService : IUserService
     {
         ILog _logger;
@@ -19,6 +19,11 @@
         {
             _logger.Info(string.Format("PrintName was called with parameter - {0}", name));
             return string.Format("Hello world, by {0}", name);
+        }
+
+        public UserLoginDto Authenticate(string username, string password)
+        {
+            return new UserLoginDto();
         }
     }
 }

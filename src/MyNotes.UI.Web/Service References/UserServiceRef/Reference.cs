@@ -9,7 +9,54 @@
 //------------------------------------------------------------------------------
 
 namespace MyNotes.UI.Web.UserServiceRef {
+    using System.Runtime.Serialization;
+    using System;
     
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserLoginDto", Namespace="http://schemas.datacontract.org/2004/07/MyNotes.Services.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class UserLoginDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GroupNameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GroupName {
+            get {
+                return this.GroupNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GroupNameField, value) != true)) {
+                    this.GroupNameField = value;
+                    this.RaisePropertyChanged("GroupName");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceRef.IUserService")]
@@ -17,6 +64,9 @@ namespace MyNotes.UI.Web.UserServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/PrintName", ReplyAction="http://tempuri.org/IUserService/PrintNameResponse")]
         string PrintName(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Authenticate", ReplyAction="http://tempuri.org/IUserService/AuthenticateResponse")]
+        MyNotes.UI.Web.UserServiceRef.UserLoginDto Authenticate(string username, string password);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -48,6 +98,10 @@ namespace MyNotes.UI.Web.UserServiceRef {
         
         public string PrintName(string name) {
             return base.Channel.PrintName(name);
+        }
+        
+        public MyNotes.UI.Web.UserServiceRef.UserLoginDto Authenticate(string username, string password) {
+            return base.Channel.Authenticate(username, password);
         }
     }
 }

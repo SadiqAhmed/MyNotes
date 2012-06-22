@@ -98,8 +98,8 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
-      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.103.1\lib\net4\RestSharp.dll</HintPath>
@@ -151,9 +151,6 @@
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
       <HintPath>..\packages\AspNetMvc.4.0.20126.16343\lib\net40\System.Web.Mvc.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Optimization">
-      <HintPath>..\packages\Microsoft.Web.Optimization.1.0.0-beta\lib\net40\System.Web.Optimization.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Providers">
       <HintPath>..\packages\System.Web.Providers.Core.1.0\lib\net40\System.Web.Providers.dll</HintPath>
@@ -214,6 +211,13 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Include\Styles\base\core.style.css" />
+    <Content Include="Include\Styles\bootstrap\bootstrap-responsive.css" />
+    <Content Include="Include\Styles\bootstrap\bootstrap-responsive.min.css" />
+    <Content Include="Include\Styles\bootstrap\bootstrap.css" />
+    <Content Include="Include\Styles\bootstrap\bootstrap.min.css" />
+    <Content Include="Include\Images\bootstrap\glyphicons-halflings-white.png" />
+    <Content Include="Include\Images\bootstrap\glyphicons-halflings.png" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Include\Images\accent.png" />
@@ -241,18 +245,11 @@
     <Content Include="Include\Images\orderedListTwo.png" />
     <Content Include="Include\Images\twitter.png" />
     <Content Include="Include\Images\windowsLive.png" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-alert.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-button.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-carousel.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-collapse.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-dropdown.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-modal.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-popover.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-scrollspy.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-tab.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-tooltip.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-transition.js" />
-    <Content Include="Include\Scripts\bootstrap\bootstrap-typeahead.js" />
+    <Content Include="Include\Scripts\base\common.js" />
+    <Content Include="Include\Scripts\base\core.address.js" />
+    <Content Include="Include\Scripts\base\core.ajax.js" />
+    <Content Include="Include\Scripts\base\core.forms.js" />
+    <Content Include="Include\Scripts\base\core.shared.js" />
     <Content Include="Include\Scripts\jQuery\jquery-1.6.2-vsdoc.js" />
     <Content Include="Include\Scripts\jQuery\jquery-1.6.2.js" />
     <Content Include="Include\Scripts\jQuery\jquery-1.6.2.min.js" />
@@ -270,8 +267,6 @@
     <Content Include="Include\Scripts\misc\knockout-2.0.0.js" />
     <Content Include="Include\Scripts\misc\modernizr-2.0.6-development-only.js" />
     <Content Include="Include\Scripts\misc\_references.js" />
-    <Content Include="Include\Styles\bootstrap\bootstrap-responsive.css" />
-    <Content Include="Include\Styles\bootstrap\bootstrap.css" />
     <Content Include="Include\Styles\default\Site.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.accordion.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.all.css" />
@@ -294,13 +289,6 @@
     <None Include="Service References\EchoServiceRef\EchoService2.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\UserServiceRef\UserService.disco" />
-    <None Include="Service References\UserServiceRef\configuration91.svcinfo" />
-    <None Include="Service References\UserServiceRef\configuration.svcinfo" />
-    <None Include="Service References\UserServiceRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
     <None Include="Service References\EchoServiceRef\EchoService.disco" />
     <None Include="Service References\EchoServiceRef\configuration91.svcinfo" />
     <None Include="Service References\EchoServiceRef\configuration.svcinfo" />
@@ -308,6 +296,19 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.UserLoginDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceRef\UserService.disco" />
+    <None Include="Service References\UserServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\UserServiceRef\configuration.svcinfo" />
+    <None Include="Service References\UserServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Include\Scripts\misc\bootstrap.js" />
+    <Content Include="Include\Scripts\misc\bootstrap.min.js" />
+    <Content Include="Include\Scripts\misc\modernizr-2.5.3.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -319,7 +320,6 @@
     </Content>
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
@@ -336,6 +336,9 @@
       <SubType>Designer</SubType>
     </None>
     <None Include="Service References\UserServiceRef\UserService1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Service References\UserServiceRef\UserService2.xsd">
       <SubType>Designer</SubType>
     </None>
     <None Include="Templates\T4MVC.tt">

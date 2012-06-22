@@ -1,11 +1,18 @@
 ﻿namespace MyNotes.UI.Web.Setup.StartupTasks.Component
 {
     using MvcBase.WebHelper.StartupTasks;
+    using MvcBase.WebHelper.MVC.Minifications;
+    using Microsoft.Web.Optimization;
 
     public class CssBundles : IIncludeComponents
     {
         public void Setup()
         {
+            var mainCssBundle = new Bundle("~/Include/Cache/MainCssBundle.Style", typeof(YuiCssMinify));
+            mainCssBundle.AddFile("~/Include/Styles/bootstrap/bootstrap.min.css");
+            mainCssBundle.AddFile("~/Include/Styles/bootstrap/bootstrap-responsive.min.css");
+            mainCssBundle.AddFile("~/Include/Styles/base/core.style.css");
+            BundleTable.Bundles.Add(mainCssBundle);
         }
     }
 }
