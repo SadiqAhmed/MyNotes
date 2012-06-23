@@ -116,8 +116,8 @@
     <Compile Include="DomainObjects\Mappings\GroupMap.cs" />
     <Compile Include="DomainObjects\Mappings\EntityBaseMap.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Repositories\DataBaseProxy.cs" />
-    <Compile Include="Repositories\IDataBaseProxy.cs" />
+    <Compile Include="StorageProxy\Repository.cs" />
+    <Compile Include="StorageProxy\IRepository.cs" />
     <Compile Include="Setup\Database\AppInterceptor.cs" />
     <Compile Include="Setup\Database\NhibernateDatabaseContext.cs" />
     <Compile Include="Setup\Database\IDatabaseContext.cs" />

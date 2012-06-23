@@ -1,21 +1,3 @@
-//$(function () {
-//    $('form').each(function () {
-//        $(this).validate({
-//            invalidHandler: function (form) {
-//            },
-//            submitHandler: function (form) {
-//                if ($(form).hasClass('jqAjaxForm')) {
-//                    $this = $('.jqAjaxForm')
-//                    submitJqueryForm($this, $this.metadata());
-//                    return false;
-//                }
-//                else
-//                    form.submit();
-//            }
-//        });
-//    });
-//});
-
 $(function () {
     $('form').live('submit', function () {
         $this = $(this);

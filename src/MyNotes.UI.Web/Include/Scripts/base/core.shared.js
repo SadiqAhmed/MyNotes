@@ -1,5 +1,5 @@
 
-var mysite = {
+var mynotes = {
     CustomEvent: {
         LoginFormSubmitted: 'LoginFormSubmitted'
     },
@@ -10,10 +10,16 @@ var mysite = {
         DataEditorContainerView: 'dataEditorContainerView',
         ContentContainerView: 'contentContainerView'
     },
+    // methods
     DisplayAlertMessage: function (text) {
-        $('#' + mysite.Constants.AlertMessage).html(text).slideDown();
+        $('#' + mynotes.Constants.AlertMessage).html(text).slideDown();
     },
     ClearAlertMessage: function () {
-        $('#' + mysite.Constants.AlertMessage).html("").fadeOut();
+        $('#' + mynotes.Constants.AlertMessage).html("").fadeOut();
+    },
+    uniqid: function()
+    {
+        var newdate = new date;
+        return newdate.gettime();
     }
 };

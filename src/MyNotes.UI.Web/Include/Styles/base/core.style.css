@@ -1,4 +1,10 @@
 ﻿body 
 {
-    padding-top: 60px;
+	padding-top: 60px !important;
+}
+
+.center
+{
+	margin:auto 0px !important;
+	text-align:center !important;
 }

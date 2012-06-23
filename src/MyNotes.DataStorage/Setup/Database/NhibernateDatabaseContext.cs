@@ -7,14 +7,42 @@
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
     using MyNotes.DataStorage.DomainObjects.Entities;
+    using MyNotes.DataStorage.Repository;
+    using System.Collections.Generic;
 
     public class NhibernateDatabaseContext : IDatabaseContext
     {
         private readonly string _dbFilePath = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, "/Database/_myNotesDatabase.db");
+        private readonly string GroupName = "SysAdmins";
 
         public NhibernateDatabaseContext()
         {
             SessionFactory = CreateSessionFactory();
+
+            using (ISession session = SessionFactory.OpenSession())
+            {
+                var groupRepository = new Repository<Group>(session);
+
+                var group = groupRepository.FindOne(x => x.Name == "SysAdmins");
+
+                if (group == null)
+                {
+                    groupRepository.Add(new Group
+                    {
+                        Name = "SysAdmins",
+                        Users = new List<User>(){
+                            new User()
+                            {
+                                FirstName = "System",
+                                LastName = "Administrator",
+                                Username = "admin",
+                                Nickname = "SuperAdmin",
+                                Password = "@dm1n",
+                            },
+                        },
+                    });
+                }
+            }
         }
 
         public ISessionFactory SessionFactory { get; private set; }
