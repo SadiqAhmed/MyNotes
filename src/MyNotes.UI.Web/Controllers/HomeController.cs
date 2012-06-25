@@ -4,12 +4,12 @@
     using MyNotes.UI.Web.EchoServiceRef;
     using Microsoft.Practices.Unity;
 
-    public class HomeController : Controller
+    public partial class HomeController : Controller
     {
         [Dependency]
         public IEchoService EchoService { get; set; }
 
-        public ActionResult Index()
+        public virtual ActionResult Index()
         {
             ViewBag.Value = EchoService.Ping();
 

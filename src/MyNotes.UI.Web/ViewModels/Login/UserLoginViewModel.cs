@@ -5,7 +5,7 @@ using System.Web;
 
 namespace MyNotes.UI.Web.ViewModels.Login
 {
-    public class UserLogin
+    public class UserLoginViewModel
     {
         public string Username { get; set; }
 

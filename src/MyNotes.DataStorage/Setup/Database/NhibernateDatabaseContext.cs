@@ -2,34 +2,35 @@
 {
     using System;
     using System.IO;
+    using System.Collections.Generic;
     using NHibernate;
     using NHibernate.Tool.hbm2ddl;
     using FluentNHibernate.Cfg;
     using FluentNHibernate.Cfg.Db;
     using MyNotes.DataStorage.DomainObjects.Entities;
-    using MyNotes.DataStorage.Repository;
-    using System.Collections.Generic;
+    using MyNotes.DataStorage.DomainObjects.Repositories;
 
     public class NhibernateDatabaseContext : IDatabaseContext
     {
         private readonly string _dbFilePath = string.Format("{0}{1}", AppDomain.CurrentDomain.BaseDirectory, "/Database/_myNotesDatabase.db");
-        private readonly string GroupName = "SysAdmins";
+        private readonly string _groupName = "SysAdmins";
 
         public NhibernateDatabaseContext()
         {
             SessionFactory = CreateSessionFactory();
 
             using (ISession session = SessionFactory.OpenSession())
+            using (var transaction = session.BeginTransaction())
             {
                 var groupRepository = new Repository<Group>(session);
 
-                var group = groupRepository.FindOne(x => x.Name == "SysAdmins");
+                var group = groupRepository.FindOne(x => x.Name == _groupName);
 
                 if (group == null)
                 {
                     groupRepository.Add(new Group
                     {
-                        Name = "SysAdmins",
+                        Name = _groupName,
                         Users = new List<User>(){
                             new User()
                             {
@@ -41,6 +42,8 @@
                             },
                         },
                     });
+
+                    transaction.Commit();
                 }
             }
         }

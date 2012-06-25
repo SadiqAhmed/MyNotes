@@ -1,4 +1,4 @@
-﻿namespace MyNotes.DataStorage.Repository
+﻿namespace MyNotes.DataStorage.DomainObjects.Repositories
 {
     using System;
     using NHibernate;

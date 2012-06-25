@@ -14,19 +14,19 @@
             IUnityContainer unityContainer = new UnityContainer();
 
             // setup components
-            var components = from t in types
-                            where t.GetInterfaces().Contains(typeof(IIncludeComponents))
+            var components = (from t in types
+                            where t.GetInterfaces().Contains(typeof(IIncludeComponent))
                                      && null != t.GetConstructor(Type.EmptyTypes)
-                            select Activator.CreateInstance(t) as IIncludeComponents;
+                            select Activator.CreateInstance(t) as IIncludeComponent).ToList();
 
             foreach (var component in components)
-                component.Setup();
+                component.Add();
 
             // register dependencies
-            var dependencies = from t in types
+            var dependencies = (from t in types
                             where t.GetInterfaces().Contains(typeof(IRegisterDependency))
                                      && null != t.GetConstructor(Type.EmptyTypes)
-                               select Activator.CreateInstance(t) as IRegisterDependency;
+                               select Activator.CreateInstance(t) as IRegisterDependency).ToList();
 
             foreach (var dependency in dependencies)
                 dependency.Inject(unityContainer);

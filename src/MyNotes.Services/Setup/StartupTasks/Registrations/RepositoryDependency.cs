@@ -2,7 +2,7 @@
 {
     using Microsoft.Practices.Unity;
     using log4net;
-    using MyNotes.DataStorage.Repository;
+    using MyNotes.DataStorage.DomainObjects.Repositories;
 
     internal class RepositoryDependency : IRegisterDependency
     {

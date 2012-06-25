@@ -205,6 +205,12 @@
     <Compile Include="Setup\StartupTasks\Component\JsBundles.cs" />
     <Compile Include="Setup\StartupTasks\Registration\ServiceDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registration\LoggerDependency.cs" />
+    <Compile Include="Templates\HomeController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Templates\LoginController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\SharedController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -213,11 +219,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
-    <Compile Include="ViewModels\Login\UserLogin.cs" />
+    <Compile Include="ViewModels\Login\UserLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Include\Scripts\app\login.js" />
     <Content Include="Include\Scripts\jQuery\chosen.jquery.js" />
+    <Content Include="Include\Scripts\jQuery\jquery.metadata.js" />
     <Content Include="Include\Styles\base\core.control.css" />
     <Content Include="Include\Styles\base\core.style.css" />
     <Content Include="Include\Styles\bootstrap\bootstrap-responsive.css" />
@@ -253,7 +260,6 @@
     <Content Include="Include\Images\orderedListTwo.png" />
     <Content Include="Include\Images\twitter.png" />
     <Content Include="Include\Images\windowsLive.png" />
-    <Content Include="Include\Scripts\base\common.js" />
     <Content Include="Include\Scripts\base\core.address.js" />
     <Content Include="Include\Scripts\base\core.ajax.js" />
     <Content Include="Include\Scripts\base\core.forms.js" />

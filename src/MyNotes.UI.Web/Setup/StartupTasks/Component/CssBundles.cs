@@ -4,9 +4,9 @@
     using MvcBase.WebHelper.MVC.Minifications;
     using Microsoft.Web.Optimization;
 
-    public class CssBundles : IIncludeComponents
+    public class CssBundles : IIncludeComponent
     {
-        public void Setup()
+        public void Add()
         {
             var mainCssBundle = new Bundle("~/Include/Cache/main.cssbundle.style", typeof(YuiCssMinify));
             mainCssBundle.AddFile("~/Include/Styles/bootstrap/bootstrap.min.css");

@@ -3,16 +3,25 @@
     using System.Runtime.Serialization;
     using System.ServiceModel;
     using log4net;
+    using AutoMapper;
+    using NHibernate;
+    using Microsoft.Practices.Unity;
+    using MyNotes.Services.Setup.StartupTasks;
     using MyNotes.Services.Contracts;
     using MyNotes.Services.Dtos;
+    using MyNotes.DataStorage.DomainObjects.Entities;
+    using MyNotes.DataStorage.DomainObjects.Repositories;
+    using MyNotes.DataStorage.StorageProxies;
 
     public class UserService : IUserService
     {
         ILog _logger;
+        ISessionFactory _sessionFactory;
 
-        public UserService(ILog logger)
+        public UserService(ILog logger, ISessionFactory sessionFactory)
         {
             _logger = logger;
+            _sessionFactory = sessionFactory;
         }
 
         public string PrintName(string name)
@@ -23,7 +32,8 @@
 
         public UserLoginDto Authenticate(string username, string password)
         {
-            return new UserLoginDto();
+            var user = (new UserStorageProxy(_sessionFactory)).ValidateUser(username, password);
+            return Mapper.Map<UserLoginDto>(user);
         }
     }
 }

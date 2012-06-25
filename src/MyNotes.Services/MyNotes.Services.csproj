@@ -165,7 +165,9 @@
     <Compile Include="Setup\Base\HostFactory\UnityServiceHostFactory.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Setup\StartupTasks\IIncludeComponent.cs" />
     <Compile Include="Setup\StartupTasks\IRegisterDependency.cs" />
+    <Compile Include="Setup\StartupTasks\Registrations\AutoMappings\UserMappingSetup.cs" />
     <Compile Include="Setup\StartupTasks\Registrations\RepositoryDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registrations\NhibernateDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registrations\LoggerDependency.cs" />

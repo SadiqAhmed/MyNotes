@@ -1,7 +1,7 @@
 ﻿namespace MvcBase.WebHelper.StartupTasks
 {
-    public interface IIncludeComponents
+    public interface IIncludeComponent
     {
-        void Setup();
+        void Add();
     }
 }
