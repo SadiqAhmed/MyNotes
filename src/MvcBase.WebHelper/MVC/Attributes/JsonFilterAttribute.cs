@@ -7,14 +7,15 @@
     {
         public override void OnActionExecuted(ActionExecutedContext filterContext)
         {
-            var querystring = filterContext.HttpContext.Request.QueryString["json"];
+            var querystring = filterContext.HttpContext.Request.Form["json"];
             if (querystring != null && Convert.ToBoolean(querystring))
             {
                 var result = new JsonResult();
                 result.Data = ((ViewResult)filterContext.Result).Model;
                 filterContext.Result = result;
             }
-            //base.OnActionExecuted(filterContext);
+            else
+                base.OnActionExecuted(filterContext);
         }        
     }
 }

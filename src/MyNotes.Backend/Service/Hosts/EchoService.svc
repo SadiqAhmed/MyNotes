@@ -1,0 +1,4 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" 
+    Service="MyNotes.Backend.Service.Implementations.EchoService" 
+    CodeBehind="EchoService.cs" 
+    Factory="MyNotes.Backend.Setup.Base.HostFactory.UnityServiceHostFactory" %>

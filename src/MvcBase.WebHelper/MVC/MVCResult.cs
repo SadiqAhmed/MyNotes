@@ -1,8 +1,8 @@
-﻿namespace MvcBase.WebHelper.MVC.Extensions
+﻿namespace MvcBase.WebHelper.MVC
 {
     using System.Web.Routing;
 
-    internal class MVCResult : IMVCResult
+    internal class MvcResult : IMvcResult
     {
         public string Action { get; set; }
         public string Controller { get; set; }

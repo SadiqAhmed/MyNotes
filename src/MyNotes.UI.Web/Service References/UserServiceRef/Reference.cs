@@ -15,7 +15,7 @@ namespace MyNotes.UI.Web.UserServiceRef {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="UserLoginDto", Namespace="http://schemas.datacontract.org/2004/07/MyNotes.Services.Dtos")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="UserLoginDto", Namespace="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos")]
     [System.SerializableAttribute()]
     public partial class UserLoginDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         

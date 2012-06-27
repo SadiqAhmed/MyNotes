@@ -201,8 +201,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Setup\StartupTasks\Component\CssBundles.cs" />
-    <Compile Include="Setup\StartupTasks\Component\JsBundles.cs" />
+    <Compile Include="Setup\ServerActions\IServiceCall.cs" />
+    <Compile Include="Setup\ServerActions\ServiceCall.cs" />
+    <Compile Include="Setup\StartupTasks\Component\AutoMappings\UserDtoMappingSetup.cs" />
+    <Compile Include="Setup\StartupTasks\Component\MinifyBundles\CssBundles.cs" />
+    <Compile Include="Setup\StartupTasks\Component\MinifyBundles\JsBundles.cs" />
     <Compile Include="Setup\StartupTasks\Registration\ServiceDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registration\LoggerDependency.cs" />
     <Compile Include="Templates\HomeController.generated.cs">
@@ -219,11 +222,14 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Login\UserDetailViewModel.cs" />
     <Compile Include="ViewModels\Login\UserLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Include\Scripts\app\login.js" />
     <Content Include="Include\Scripts\jQuery\chosen.jquery.js" />
+    <Content Include="Include\Scripts\jQuery\jquery.ba-bbq.min.js" />
+    <Content Include="Include\Scripts\jQuery\jquery.blockUI.js" />
     <Content Include="Include\Scripts\jQuery\jquery.metadata.js" />
     <Content Include="Include\Styles\base\core.control.css" />
     <Content Include="Include\Styles\base\core.style.css" />
@@ -296,19 +302,15 @@
     <Content Include="Include\Styles\jQuery\jquery.ui.slider.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.tabs.css" />
     <Content Include="Include\Styles\jQuery\jquery.ui.theme.css" />
+    <Content Include="Include\Scripts\misc\bootstrap.js" />
+    <Content Include="Include\Scripts\misc\bootstrap.min.js" />
+    <Content Include="Include\Scripts\misc\modernizr-2.5.3.js" />
     <None Include="Service References\EchoServiceRef\EchoService.wsdl" />
     <None Include="Service References\EchoServiceRef\EchoService.xsd">
       <SubType>Designer</SubType>
     </None>
-    <None Include="Service References\EchoServiceRef\EchoService2.xsd">
+    <None Include="Service References\EchoServiceRef\EchoService1.xsd">
       <SubType>Designer</SubType>
-    </None>
-    <None Include="Service References\EchoServiceRef\EchoService.disco" />
-    <None Include="Service References\EchoServiceRef\configuration91.svcinfo" />
-    <None Include="Service References\EchoServiceRef\configuration.svcinfo" />
-    <None Include="Service References\EchoServiceRef\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.UserLoginDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -320,9 +322,13 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
-    <Content Include="Include\Scripts\misc\bootstrap.js" />
-    <Content Include="Include\Scripts\misc\bootstrap.min.js" />
-    <Content Include="Include\Scripts\misc\modernizr-2.5.3.js" />
+    <None Include="Service References\EchoServiceRef\EchoService.disco" />
+    <None Include="Service References\EchoServiceRef\configuration91.svcinfo" />
+    <None Include="Service References\EchoServiceRef\configuration.svcinfo" />
+    <None Include="Service References\EchoServiceRef\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -337,6 +343,7 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Login\Index.cshtml" />
+    <Content Include="Views\Login\LoginSuccess.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

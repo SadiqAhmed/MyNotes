@@ -14,7 +14,7 @@
             data: actionData,
             dataType: actionDataType,
             success: function (response, status, xhr) {
-                mysite.ClearAlertMessage();
+                mynotes.ClearAlertMessage();
                 if (response) {
                     if (!response.HasError) {
                         if (eventName)
@@ -24,10 +24,10 @@
                             window.location = response.RedirectUrl;
 
                         if (response.DataCaptureView)
-                            $('#' + mysite.Constants.LeftView).html(response.DataCaptureView);
+                            $('#' + mynotes.Constants.LeftView).html(response.DataCaptureView);
 
                         if (response.ContentView)
-                            $('#' + mysite.Constants.RightView).html(response.ContentView);
+                            $('#' + mynotes.Constants.RightView).html(response.ContentView);
 
                         if (callback) callback(response);
 
@@ -35,7 +35,7 @@
                             $('#main').unblock();
                         }
                     } else {
-                        mysite.DisplayAlertMessage(response.Message);
+                        mynotes.DisplayAlertMessage(response.Message);
                     }
                 }
             },
@@ -43,7 +43,7 @@
                 if (blockOnCall) {
                     $('#main').unblock();
                 }
-                mysite.DisplayAlertMessage('Error has occured. Please try again later');
+                mynotes.DisplayAlertMessage('Error has occured. Please try again later');
             }
         });
     }

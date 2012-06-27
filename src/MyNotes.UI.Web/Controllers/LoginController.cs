@@ -4,6 +4,7 @@
     using MyNotes.UI.Web.ViewModels.Login;
     using MyNotes.UI.Web.UserServiceRef;
     using MvcBase.WebHelper.MVC.Attributes;
+    using AutoMapper;
 
     public partial class LoginController : Controller
     {
@@ -20,11 +21,11 @@
         }
 
         [HttpPost]
-        [JsonFilter]
         public virtual ActionResult ValidateCredentials(UserLoginViewModel viewmodel)
         {
-            var userInfo = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
-            return Json(userInfo);
+            var userInfoDto = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
+            var userViewModel = Mapper.Map<UserDetailViewModel>(userInfoDto);
+            return View("LoginSuccess", userViewModel);
         }
     }
 }

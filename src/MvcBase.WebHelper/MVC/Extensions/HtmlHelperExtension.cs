@@ -9,7 +9,7 @@
     {
         public static MvcHtmlString ActionLinkWithFragment(this HtmlHelper htmlHelper, string text, ActionResult fragmentAction, string title = null, string cssClass = null)
         {
-            var mvcActionResult = fragmentAction as IMVCResult;
+            var mvcActionResult = fragmentAction as IMvcResult;
 
             if (mvcActionResult == null)
                 return null;

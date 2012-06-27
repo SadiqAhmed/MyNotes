@@ -6,9 +6,9 @@
 
     internal static class ActionResultExtension
     {
-        public static IMVCResult AsMVCResult(this ActionResult actionResult)
+        public static IMvcResult AsMVCResult(this ActionResult actionResult)
         {
-            var mvcResult = new MVCResult();
+            IMvcResult mvcResult = new MvcResult();
             var properties = actionResult.GetType().GetProperties();
 
             if (properties != null)

@@ -16,7 +16,8 @@ submitJqueryForm = function ($this, data) {
     if (data.IsAjax) {
         console.log('is ajax call');
         url = $this.attr('action');
-        postData = $this.serialize
+        $this.append('<input name="json" value="true" style="display:none"/>');
+        postData = $this.serialize();
         $.AjaxPost(url, postData, data.EventName, data.UpdateId);
     } else {
         $this[0].submit();

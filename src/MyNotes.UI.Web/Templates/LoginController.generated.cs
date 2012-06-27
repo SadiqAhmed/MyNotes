@@ -81,6 +81,7 @@ namespace MyNotes.UI.Web.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string Index = "~/Views/Login/Index.cshtml";
+            public readonly string LoginSuccess = "~/Views/Login/LoginSuccess.cshtml";
         }
     }
 
