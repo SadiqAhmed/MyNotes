@@ -4,7 +4,7 @@
     using NHibernate;
     using System.Linq.Expressions;
 
-    public class Repository<TEntity> : IRepository<TEntity>
+    internal class Repository<TEntity> : IRepository<TEntity>
         where TEntity : class
     {
         protected ISession _session;

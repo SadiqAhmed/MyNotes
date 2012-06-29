@@ -13,7 +13,7 @@
     using MyNotes.Backend.DataAccess.DomainObjects.Repositories;
     using MyNotes.Backend.DataAccess.StorageProxies;
 
-    public class UserService : IUserService
+    internal class UserService : IUserService
     {
         ILog _logger;
         ISessionFactory _sessionFactory;

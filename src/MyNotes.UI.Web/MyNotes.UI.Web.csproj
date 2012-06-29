@@ -104,6 +104,9 @@
     <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="RestSharp">
       <HintPath>..\packages\RestSharp.103.1\lib\net4\RestSharp.dll</HintPath>
     </Reference>
@@ -201,7 +204,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Setup\ServerActions\AjaxResponse.cs" />
     <Compile Include="Setup\ServerActions\IServiceCall.cs" />
+    <Compile Include="Setup\ServerActions\JsonResponseActionResult.cs" />
+    <Compile Include="Setup\ServerActions\RefreshOptions.cs" />
     <Compile Include="Setup\ServerActions\ServiceCall.cs" />
     <Compile Include="Setup\StartupTasks\Component\AutoMappings\UserDtoMappingSetup.cs" />
     <Compile Include="Setup\StartupTasks\Component\MinifyBundles\CssBundles.cs" />
@@ -344,6 +350,7 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Login\LoginSuccess.cshtml" />
+    <Content Include="Views\Shared\_dataCaptureScreen.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

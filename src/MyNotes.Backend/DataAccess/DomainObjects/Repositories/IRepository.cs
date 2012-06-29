@@ -4,7 +4,7 @@
     using NHibernate;
     using System.Linq.Expressions;
 
-    public interface IRepository<TEntity>
+    internal interface IRepository<TEntity>
     {
         /// <summary>
         /// Add entity of type TEntity

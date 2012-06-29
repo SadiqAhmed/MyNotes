@@ -25,7 +25,7 @@
         {
             var userInfoDto = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
             var userViewModel = Mapper.Map<UserDetailViewModel>(userInfoDto);
-            return View("LoginSuccess", userViewModel);
+            return View(MVC.Login.Views.LoginSuccess, userViewModel);
         }
     }
 }

@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
 
-    public abstract class EntityBaseMap<T> : ClassMap<T>
+    internal abstract class EntityBaseMap<T> : ClassMap<T>
         where T : EntityBase
     {
         public EntityBaseMap()
