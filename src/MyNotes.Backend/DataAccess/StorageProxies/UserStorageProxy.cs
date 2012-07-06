@@ -6,7 +6,7 @@
     using MyNotes.Backend.DataAccess.DomainObjects.Repositories;
     using MyNotes.Backend.Dtos;
 
-    public class UserStorageProxy
+    internal class UserStorageProxy
     {
         ISessionFactory _sessionFactory;
 

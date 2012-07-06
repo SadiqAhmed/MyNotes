@@ -7,7 +7,7 @@
 
     public class UserDtoMappingSetup : IIncludeComponent
     {
-        public void Add()
+        public void Setup()
         {
             Mapper.CreateMap<UserLoginDto, UserDetailViewModel>();
         }

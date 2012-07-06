@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
 
-    internal class UserMap : EntityBaseMap<User>
+    public class UserMap : EntityBaseMap<User>
     {
         public UserMap()
         {

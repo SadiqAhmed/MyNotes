@@ -5,9 +5,14 @@
     using MyNotes.UI.Web.UserServiceRef;
     using MvcBase.WebHelper.MVC.Attributes;
     using AutoMapper;
+    using MyNotes.UI.Web.Setup;
+    using MyNotes.UI.Web.Setup.ActionApi;
+    using Microsoft.Practices.Unity;
+    using MyNotes.UI.Web.Setup.Common;
 
     public partial class LoginController : Controller
     {
+        IServiceAction _serviceAction;
         IUserService _userService;
 
         public LoginController(IUserService userService)
@@ -20,12 +25,17 @@
             return View();
         }
 
-        [HttpPost]
+        [HttpGet]
         public virtual ActionResult ValidateCredentials(UserLoginViewModel viewmodel)
         {
-            var userInfoDto = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
-            var userViewModel = Mapper.Map<UserDetailViewModel>(userInfoDto);
-            return View(MVC.Login.Views.LoginSuccess, userViewModel);
+            return new ServiceAction(this)
+                        .Fetch(SessionKey.Home)
+                        .WithPopup<UserDetailViewModel>(MVC.Login.Views.LoginSuccess,
+                            () => {
+                                var userDetail = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
+                                return Mapper.Map<UserDetailViewModel>(userDetail);
+                            })
+                        .Execute();
         }
     }
 }

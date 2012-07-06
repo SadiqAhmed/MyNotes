@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
 
-    internal class TransactionMap : EntityBaseMap<Transaction>
+    public class TransactionMap : EntityBaseMap<Transaction>
     {
         public TransactionMap()
         {

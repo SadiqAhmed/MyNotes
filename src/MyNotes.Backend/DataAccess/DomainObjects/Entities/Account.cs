@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    internal class Account : EntityBase
+    public class Account : EntityBase
     {
         public Account()
         {

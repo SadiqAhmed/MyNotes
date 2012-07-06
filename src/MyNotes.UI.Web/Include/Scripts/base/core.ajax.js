@@ -23,7 +23,7 @@
                         if (response.RedirectUrl)
                             window.location = response.RedirectUrl;
 
-                        if (response.DataCaptureView)
+                        if (response.PopupView)
                             $('#' + mynotes.Constants.LeftView).html(response.DataCaptureView);
 
                         if (response.ContentView)
@@ -48,11 +48,11 @@
         });
     }
 
-    $.AjaxPost = function (url, postData, eventName, callback) {
+    $.ajaxPost = function (url, postData, eventName, callback) {
         return ajaxCall(url, 'post', postData, 'json', true, eventName, callback);
     }
 
-    $.AjaxGet = function () {
+    $.ajaxGet = function () {
         var args = arguments[0] || {};
         var url = args.url;
         var data = args.data;

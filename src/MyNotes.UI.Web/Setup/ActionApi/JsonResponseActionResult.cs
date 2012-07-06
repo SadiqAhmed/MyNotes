@@ -1,4 +1,4 @@
-﻿namespace MyNotes.UI.Web.Setup.ServerActions
+﻿namespace MyNotes.UI.Web.Setup.ActionApi
 {
     using System.Web.Mvc;
     using MvcBase.WebHelper.MVC.Extensions;
@@ -21,20 +21,24 @@
         }
 
         private static AjaxResponse GetAjaxResponse(ControllerContext context, string popupViewName, object popupViewModel, string contentViewName, object contentViewModel, 
-            string viewName, object viewModel, string redirectUrl)
+            string resultViewName, object resultViewModel, string redirectUrl)
         {
             var response = new AjaxResponse();
 
             if (!string.IsNullOrEmpty(popupViewName))
-                response.DataCaptureView = context.RenderPartialViewToString(popupViewName, popupViewModel);
+                response.PopupView = context.RenderPartialViewToString(popupViewName, popupViewModel);
 
             if (!string.IsNullOrEmpty(contentViewName))
                 response.ContentView = context.RenderPartialViewToString(contentViewName, contentViewModel);
 
-            if (!string.IsNullOrEmpty(viewName))
-                response.Result = context.RenderPartialViewToString(viewName, viewModel);
-            else if(viewModel != null)
+            if (!string.IsNullOrEmpty(resultViewName))
+                response.Result = context.RenderPartialViewToString(resultViewName, resultViewModel);
+            else if(resultViewModel != null)
             {
+                var jsonResult = new JsonResult();
+                jsonResult.Data = resultViewModel;
+                jsonResult.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
+                response.Result = jsonResult.ToString();
             }
 
             if (!string.IsNullOrEmpty(redirectUrl))

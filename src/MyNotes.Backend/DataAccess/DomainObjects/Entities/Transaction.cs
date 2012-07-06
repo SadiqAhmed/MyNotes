@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal class Transaction : EntityBase
+    public class Transaction : EntityBase
     {
         public Transaction()
         {

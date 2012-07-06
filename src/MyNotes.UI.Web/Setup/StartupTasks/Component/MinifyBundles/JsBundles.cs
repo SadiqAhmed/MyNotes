@@ -6,7 +6,7 @@
 
     public class JsBundles : IIncludeComponent
     {
-        public void Add()
+        public void Setup()
         {
             var mainJsBundle = new Bundle("~/Include/Cache/main.jsbundle.script", typeof(YuiJsMinify));
             mainJsBundle.AddFile("~/Include/Scripts/jQuery/jquery.metadata.js");

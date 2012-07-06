@@ -1,4 +1,4 @@
-﻿namespace MyNotes.UI.Web.Setup.ServerActions
+﻿namespace MyNotes.UI.Web.Setup.ActionApi
 {
     public class RefreshOptions
     {

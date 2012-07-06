@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    internal class User : EntityBase
+    public class User : EntityBase
     {
         protected string _nickname;
 

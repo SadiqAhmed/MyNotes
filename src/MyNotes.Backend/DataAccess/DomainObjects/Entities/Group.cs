@@ -3,7 +3,7 @@
     using System;
     using System.Collections.Generic;
 
-    internal class Group : EntityBase
+    public class Group : EntityBase
     {
         public Group()
         {

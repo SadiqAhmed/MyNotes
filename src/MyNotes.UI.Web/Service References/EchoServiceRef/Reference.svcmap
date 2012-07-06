@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="79c4b2d4-0cdb-43ee-8af0-c290a7c3967e" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="418a4353-d8c2-467d-abac-dcb9f0199bcd" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <EnableDataBinding>true</EnableDataBinding>
@@ -21,10 +21,10 @@
     <MetadataSource Address="http://localhost:47834/Service/Hosts/EchoService.svc" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="EchoService.xsd" MetadataType="Schema" ID="f7b3ac93-f38f-4fe8-ac8a-616671b3972d" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?xsd=xsd1" />
-    <MetadataFile FileName="EchoService1.xsd" MetadataType="Schema" ID="fb58289e-1791-420d-afba-a7ff96f5cab7" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?xsd=xsd0" />
-    <MetadataFile FileName="EchoService.wsdl" MetadataType="Wsdl" ID="7770a47a-92fb-47eb-8b85-86ccf498c2f9" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?wsdl" />
-    <MetadataFile FileName="EchoService.disco" MetadataType="Disco" ID="9d0c45a2-7099-4716-bb3c-44bef7c0cff9" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?disco" />
+    <MetadataFile FileName="EchoService.xsd" MetadataType="Schema" ID="30ce3f0e-815d-417f-a6df-6838e40c0f7d" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?xsd=xsd1" />
+    <MetadataFile FileName="EchoService1.xsd" MetadataType="Schema" ID="78d505e2-ab4b-4517-8bdd-9f3c9ae5f3a4" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?xsd=xsd0" />
+    <MetadataFile FileName="EchoService.wsdl" MetadataType="Wsdl" ID="4a8190c1-3a33-4d8d-81f2-685a6fa5c38e" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?wsdl" />
+    <MetadataFile FileName="EchoService.disco" MetadataType="Disco" ID="3d3bcb35-5900-4d57-b416-f14a844b6ef9" SourceId="1" SourceUrl="http://localhost:47834/Service/Hosts/EchoService.svc?disco" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
 
-    internal class GroupMap : EntityBaseMap<Group>
+    public class GroupMap : EntityBaseMap<Group>
     {
         public GroupMap()
         {

@@ -5,6 +5,7 @@
     using System.Web.Routing;
     using MvcBase.WebHelper.StartupTasks;
     using System.Reflection;
+    using MyNotes.UI.Web.Setup;
 
     // Note: For instructions on enabling IIS6 or IIS7 classic mode, 
     // visit http://go.microsoft.com/?LinkId=9394801
@@ -40,7 +41,7 @@
             RegisterGlobalFilters(GlobalFilters.Filters);
             RegisterRoutes(RouteTable.Routes);
 
-            (new RegisterStartupTasks()).Execute(Assembly.GetExecutingAssembly().GetTypes());
+            WebDependencyBuilder.Container = (new RegisterStartupTasks()).Execute(Assembly.GetExecutingAssembly().GetTypes());
         }
     }
 }

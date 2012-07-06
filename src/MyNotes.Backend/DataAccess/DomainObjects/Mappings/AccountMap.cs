@@ -3,7 +3,7 @@
     using FluentNHibernate.Mapping;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
 
-    internal class AccountMap : EntityBaseMap<Account>
+    public class AccountMap : EntityBaseMap<Account>
     {
         public AccountMap()
         {

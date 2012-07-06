@@ -2,7 +2,7 @@
 {
     using System;
 
-    internal abstract class EntityBase
+    public abstract class EntityBase
     {
         /// <summary>
         /// Gets or Sets the Id

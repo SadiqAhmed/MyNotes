@@ -20,7 +20,7 @@
                             select Activator.CreateInstance(t) as IIncludeComponent).ToList();
 
             foreach (var component in components)
-                component.Add();
+                component.Setup();
 
             // register dependencies
             var dependencies = (from t in types

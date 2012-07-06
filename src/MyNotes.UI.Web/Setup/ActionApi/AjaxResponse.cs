@@ -1,12 +1,11 @@
-﻿namespace MyNotes.UI.Web.Setup.ServerActions
+﻿namespace MyNotes.UI.Web.Setup.ActionApi
 {
     public class AjaxResponse
     {
         public AjaxResponse()
         {
             Message = null;
-            DataCaptureView = null;
-            DataCaptureIsWizard = false;
+            PopupView = null;
             ContentView = null;
             ContentIsWizard = false;
             RedirectUrl = null;
@@ -18,9 +17,7 @@
 
         public string Message { get; set; }
 
-        public string DataCaptureView { get; set; }
-
-        public bool DataCaptureIsWizard { get; set; }
+        public string PopupView { get; set; }
 
         public string ContentView { get; set; }
 

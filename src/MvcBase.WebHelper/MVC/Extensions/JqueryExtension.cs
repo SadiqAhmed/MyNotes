@@ -63,8 +63,9 @@
 
             var metadata = "{" + metadataBuilder.ToString() + "}";
 
+            tagBuilder.Attributes["data-options"] = metadata;
             tagBuilder.MergeAttribute("autocomplete", @"off");
-            tagBuilder.MergeAttribute("class", "jqAjaxForm " + (!string.IsNullOrEmpty(cssClassNames) ? cssClassNames : string.Empty) + @" " + metadata);
+            tagBuilder.MergeAttribute("class", "jqAjaxForm " + (!string.IsNullOrEmpty(cssClassNames) ? cssClassNames : string.Empty));
             tagBuilder.GenerateId(formId);
             ajaxHelper.ViewContext.Writer.Write(tagBuilder.ToString(TagRenderMode.StartTag));
 

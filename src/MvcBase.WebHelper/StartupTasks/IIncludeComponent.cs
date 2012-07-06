@@ -2,6 +2,6 @@
 {
     public interface IIncludeComponent
     {
-        void Add();
+        void Setup();
     }
 }

@@ -6,7 +6,7 @@
 
     public class CssBundles : IIncludeComponent
     {
-        public void Add()
+        public void Setup()
         {
             var mainCssBundle = new Bundle("~/Include/Cache/main.cssbundle.style", typeof(YuiCssMinify));
             mainCssBundle.AddFile("~/Include/Styles/bootstrap/bootstrap.min.css");
