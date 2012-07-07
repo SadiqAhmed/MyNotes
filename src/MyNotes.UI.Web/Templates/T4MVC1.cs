@@ -23,6 +23,7 @@ using T4MVC;
 
 [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
 public static class MVC {
+    public static MyNotes.UI.Web.Controllers.AdminController Admin = new MyNotes.UI.Web.Controllers.T4MVC_AdminController();
     public static MyNotes.UI.Web.Controllers.HomeController Home = new MyNotes.UI.Web.Controllers.T4MVC_HomeController();
     public static MyNotes.UI.Web.Controllers.LoginController Login = new MyNotes.UI.Web.Controllers.T4MVC_LoginController();
     public static T4MVC.SharedController Shared = new T4MVC.SharedController();

@@ -188,6 +188,7 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Global.asax.cs">
@@ -223,6 +224,9 @@
     <Compile Include="Setup\StartupTasks\Registration\ServiceDependency.cs" />
     <Compile Include="Setup\StartupTasks\Registration\LoggerDependency.cs" />
     <Compile Include="Setup\WebDependencyBuilder.cs" />
+    <Compile Include="Templates\AdminController.generated.cs">
+      <DependentUpon>T4MVC.tt</DependentUpon>
+    </Compile>
     <Compile Include="Templates\HomeController.generated.cs">
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
@@ -246,7 +250,6 @@
     <Content Include="Include\Scripts\jQuery\jquery.ba-bbq.min.js" />
     <Content Include="Include\Scripts\jQuery\jquery.blockUI.js" />
     <Content Include="Include\Scripts\jQuery\jquery.metadata.js" />
-    <Content Include="Include\Styles\base\core.control.css" />
     <Content Include="Include\Styles\base\core.style.css" />
     <Content Include="Include\Styles\bootstrap\bootstrap-responsive.css" />
     <Content Include="Include\Styles\bootstrap\bootstrap-responsive.min.css" />
@@ -358,9 +361,11 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
     <Content Include="Views\Login\Index.cshtml" />
-    <Content Include="Views\Login\LoginSuccess.cshtml" />
     <Content Include="Views\Shared\_contentScreen.cshtml" />
     <Content Include="Views\Shared\_popupScreen.cshtml" />
+    <Content Include="Views\Admin\Index.cshtml" />
+    <Content Include="Views\Shared\_menuBar.cshtml" />
+    <Content Include="Views\Shared\_footer.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

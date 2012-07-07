@@ -37,5 +37,29 @@
 
             return new MvcHtmlString(string.Format("<a id=\"{0}\" href=\"{1}\" class=\"jqAddress {2}\">{3}</a>", Guid.NewGuid(), actionLink, linkCssClass.ToString(), text));
         }
+
+        public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string text, ActionResult action, string cssClass)
+        {
+            var mvcActionResult = action as IMvcResult;
+
+            if (mvcActionResult == null)
+                return null;
+
+            var linkCssClass = new StringBuilder();
+            var actionLink = string.Format("{0}/{1}",
+                        RouteTable.Routes.GetVirtualPathForArea(htmlHelper.ViewContext.RequestContext,
+                                                        new RouteValueDictionary(new
+                                                        {
+                                                            area = string.Empty,
+                                                            controller = mvcActionResult.Controller,
+                                                            action = string.Empty,
+                                                        })).VirtualPath,
+                         mvcActionResult.Action);
+
+            if (!string.IsNullOrEmpty(cssClass))
+                linkCssClass.Append(cssClass.Trim());
+
+            return new MvcHtmlString(string.Format("<a id=\"{0}\" href=\"{1}\" class=\"jqAddress {2}\">{3}</a>", Guid.NewGuid(), actionLink, linkCssClass.ToString(), text));
+        }
     }
 }

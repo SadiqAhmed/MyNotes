@@ -21,9 +21,12 @@ using System.Web.Mvc.Html;
 using System.Web.Routing;
 using T4MVC;
 namespace MyNotes.UI.Web.Controllers {
-    public partial class LoginController {
+    public partial class AdminController {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        protected LoginController(Dummy d) { }
+        public AdminController() { }
+
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        protected AdminController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected RedirectToRouteResult RedirectToAction(ActionResult result) {
@@ -37,20 +40,15 @@ namespace MyNotes.UI.Web.Controllers {
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
-        [NonAction]
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public System.Web.Mvc.ActionResult ValidateCredentials() {
-            return new T4MVC_ActionResult(Area, Name, ActionNames.ValidateCredentials);
-        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public LoginController Actions { get { return MVC.Login; } }
+        public AdminController Actions { get { return MVC.Admin; } }
         [GeneratedCode("T4MVC", "2.0")]
         public readonly string Area = "";
         [GeneratedCode("T4MVC", "2.0")]
-        public readonly string Name = "Login";
+        public readonly string Name = "Admin";
         [GeneratedCode("T4MVC", "2.0")]
-        public const string NameConst = "Login";
+        public const string NameConst = "Admin";
 
         static readonly ActionNamesClass s_actions = new ActionNamesClass();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -58,44 +56,29 @@ namespace MyNotes.UI.Web.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string Index = "Index";
-            public readonly string ValidateCredentials = "ValidateCredentials";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
-            public const string ValidateCredentials = "ValidateCredentials";
         }
 
 
-        static readonly ActionParamsClass_ValidateCredentials s_params_ValidateCredentials = new ActionParamsClass_ValidateCredentials();
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public ActionParamsClass_ValidateCredentials ValidateCredentialsParams { get { return s_params_ValidateCredentials; } }
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public class ActionParamsClass_ValidateCredentials {
-            public readonly string viewmodel = "viewmodel";
-        }
         static readonly ViewNames s_views = new ViewNames();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
-            public readonly string Index = "~/Views/Login/Index.cshtml";
+            public readonly string Index = "~/Views/Admin/Index.cshtml";
         }
     }
 
     [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-    public class T4MVC_LoginController: MyNotes.UI.Web.Controllers.LoginController {
-        public T4MVC_LoginController() : base(Dummy.Instance) { }
+    public class T4MVC_AdminController: MyNotes.UI.Web.Controllers.AdminController {
+        public T4MVC_AdminController() : base(Dummy.Instance) { }
 
         public override System.Web.Mvc.ActionResult Index() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
-            return callInfo;
-        }
-
-        public override System.Web.Mvc.ActionResult ValidateCredentials(MyNotes.UI.Web.ViewModels.Login.UserLoginViewModel viewmodel) {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ValidateCredentials);
-            callInfo.RouteValueDictionary.Add("viewmodel", viewmodel);
             return callInfo;
         }
 

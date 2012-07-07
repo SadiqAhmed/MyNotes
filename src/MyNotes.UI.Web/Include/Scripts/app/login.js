@@ -8,7 +8,7 @@ $(function () {
             .removeClass('control-group error');
 
         $('#errMsg')
-            .html('');
+            .html('&nbsp;');
 
         $.ajaxGet({
             url: validateUrl,
