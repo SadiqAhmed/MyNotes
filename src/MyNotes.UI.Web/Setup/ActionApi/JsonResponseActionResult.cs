@@ -2,6 +2,7 @@
 {
     using System.Web.Mvc;
     using MvcBase.WebHelper.MVC.Extensions;
+    using Newtonsoft.Json;
 
     public class JsonResponseActionResult : ActionResult
     {
@@ -35,10 +36,7 @@
                 response.Result = context.RenderPartialViewToString(resultViewName, resultViewModel);
             else if(resultViewModel != null)
             {
-                var jsonResult = new JsonResult();
-                jsonResult.Data = resultViewModel;
-                jsonResult.JsonRequestBehavior = JsonRequestBehavior.AllowGet;
-                response.Result = jsonResult.ToString();
+                response.Result = JsonConvert.SerializeObject(resultViewModel); ;
             }
 
             if (!string.IsNullOrEmpty(redirectUrl))

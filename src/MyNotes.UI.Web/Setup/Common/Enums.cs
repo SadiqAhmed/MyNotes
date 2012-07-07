@@ -8,7 +8,7 @@
 
     public enum SessionKey
     {
-        Home,
-        NewToDoTask,
+        Login,
+        UserDetails,
     }
 }

@@ -28,21 +28,21 @@
                 </div>
             </div>
         </div>
-
+        
         <div class="container">
             <div class="row">
-                <div class="hero-unit offset4 span3">
+                <div id="loginSection" class="hero-unit offset4 span3">
                     <div class="row center"><h3>User Login</h3></div>
-                    <div class="row">&nbsp;</div>
+                    <div id="errMsg" class="row center">&nbsp;</div>
                     <div class="row center">
-                        <input type="text" class="input-xlarge" placeholder="Username" name="Username" id="Username" />
+                        <input type="text" class="input-xlarge jqlc" placeholder="Username" name="Username" id="Username" />
                     </div>
                     <div class="row center">
-                        <input type="password" class="input-xlarge" placeholder="Password" name="Password" id="Password" />
+                        <input type="password" class="input-xlarge jqlc" placeholder="Password" name="Password" id="Password" />
                     </div>
                     <div class="row">&nbsp;</div>
                     <div class="row center">
-                        <input id="btnLogIn" type="submit" class="btn btn-primary" data-loading-text="validating user ..." value="Log In" />
+                        <button id="btnLogIn" class="btn btn-primary" >Log In</button>
                         <button id="btnClear" class="btn" >Clear</button>
                     </div>
                 </div>
@@ -56,6 +56,7 @@
         <script type="text/javascript" src="@Url.Content("~/Include/Scripts/base/core.forms.js")" ></script>
         <script type="text/javascript" >
             var validateUrl = '@Url.Action(MVC.Login.Actions.ValidateCredentials())';
+            var loginSuccessUrl = '@Url.Action(MVC.Home.Actions.Index())';
         </script>
     </body>
 </html>

@@ -6,11 +6,11 @@
     {
         IServiceGetAction WithPopup<TViewModel>(string viewName, Func<TViewModel> query = null);
 
-        IServiceGetAction WithContent<TDto, TViewModel>(string viewName, Func<TDto> query = null);
+        IServiceGetAction WithContent<TViewModel>(string viewName, Func<TViewModel> query = null);
 
-        IServiceGetAction WithResult<TDto, TViewModel>(Func<TDto> query);
+        IServiceGetAction WithResult<TViewModel>(Func<TViewModel> query);
 
-        IServiceGetAction WithResult<TDto, TViewModel>(string viewName, Func<TDto> query = null);
+        IServiceGetAction WithResult<TViewModel>(string viewName, Func<TViewModel> query = null);
 
         JsonResponseActionResult Execute();
     }

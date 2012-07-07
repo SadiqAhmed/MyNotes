@@ -30,7 +30,7 @@
             return (IServiceGetAction)this;
         }
 
-        public IServiceGetAction WithContent<TDto, TViewModel>(string viewName, Func<TDto> serviceQuery = null)
+        public IServiceGetAction WithContent<TViewModel>(string viewName, Func<TViewModel> serviceQuery = null)
         {
             _contentViewName = viewName;
 
@@ -40,17 +40,17 @@
             return (IServiceGetAction)this;
         }
 
-        public IServiceGetAction WithResult<TDto, TViewModel>(Func<TDto> serviceQuery)
+        public IServiceGetAction WithResult<TViewModel>(Func<TViewModel> serviceQuery)
         {
-            return WithResult<TDto, TViewModel>(null, serviceQuery);
+            return WithResult<TViewModel>(null, serviceQuery);
         }
 
-        public IServiceGetAction WithResult<TDto, TViewModel>(string viewName, Func<TDto> serviceQuery = null)
+        public IServiceGetAction WithResult<TViewModel>(string viewName, Func<TViewModel> serviceQuery = null)
         {
             _resultViewName = viewName;
 
             if (serviceQuery != null)
-                _resultViewModel = Mapper.Map<TDto, TViewModel>(serviceQuery());
+                _resultViewModel = Mapper.Map<TViewModel>(serviceQuery());
 
             return (IServiceGetAction)this;
         }

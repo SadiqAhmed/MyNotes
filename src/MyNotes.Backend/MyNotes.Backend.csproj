@@ -87,7 +87,6 @@
     <Content Include="Global.asax" />
     <Content Include="Service\Hosts\EchoService.svc" />
     <Content Include="Service\Hosts\UserService.svc" />
-    <Content Include="Service\Service1.svc" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -120,10 +119,6 @@
     <Compile Include="DataAccess\DomainObjects\Repositories\Repository.cs" />
     <Compile Include="Service\Implementations\EchoService.cs" />
     <Compile Include="Service\Implementations\UserService.cs" />
-    <Compile Include="Service\IService1.cs" />
-    <Compile Include="Service\Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
     <Compile Include="Setup\Base\HostFactory\UnityInstanceProvider.cs" />
     <Compile Include="Setup\Base\HostFactory\UnityServiceBehavior.cs" />
     <Compile Include="Setup\Base\HostFactory\UnityServiceHost.cs" />

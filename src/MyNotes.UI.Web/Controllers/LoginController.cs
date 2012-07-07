@@ -9,10 +9,10 @@
     using MyNotes.UI.Web.Setup.ActionApi;
     using Microsoft.Practices.Unity;
     using MyNotes.UI.Web.Setup.Common;
+    using MyNotes.UI.Web.Setup.Extensions;
 
     public partial class LoginController : Controller
     {
-        IServiceAction _serviceAction;
         IUserService _userService;
 
         public LoginController(IUserService userService)
@@ -29,11 +29,11 @@
         public virtual ActionResult ValidateCredentials(UserLoginViewModel viewmodel)
         {
             return new ServiceAction(this)
-                        .Fetch(SessionKey.Home)
-                        .WithPopup<UserDetailViewModel>(MVC.Login.Views.LoginSuccess,
-                            () => {
+                        .Fetch(SessionKey.Login)
+                        .WithResult<UserLoginDto>(() => {
                                 var userDetail = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
-                                return Mapper.Map<UserDetailViewModel>(userDetail);
+                                Session.SetValue(SessionKey.UserDetails, userDetail);
+                                return userDetail;
                             })
                         .Execute();
         }

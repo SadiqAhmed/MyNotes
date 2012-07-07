@@ -9,7 +9,6 @@
             ContentView = null;
             ContentIsWizard = false;
             RedirectUrl = null;
-            ResultIsWizard = false;
             Result = null;
         }
 
@@ -23,9 +22,7 @@
 
         public bool ContentIsWizard { get; set; }
 
-        public string Result { get; set; }
-
-        public bool ResultIsWizard { get; set; }
+        public object Result { get; set; }
 
         public string RedirectUrl { get; set; }
     }
