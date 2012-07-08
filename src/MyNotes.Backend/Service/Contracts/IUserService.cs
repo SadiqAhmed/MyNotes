@@ -1,5 +1,6 @@
 ﻿namespace MyNotes.Backend.Service.Contracts
 {
+    using System;
     using System.ServiceModel;
     using MyNotes.Backend.Dtos;
     using System.Collections.Generic;
@@ -8,9 +9,12 @@
     public interface IUserService
     {
         [OperationContract]
-        UserLoginDto Authenticate(string username, string password);
+        LoggedUserInfoDto Authenticate(string username, string password);
 
         [OperationContract]
         IList<GroupDto> GetAllGroups();
+
+        [OperationContract]
+        IList<UserDto> GetAllUsers(Guid userId);
     }
 }

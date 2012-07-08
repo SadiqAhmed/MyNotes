@@ -1,5 +1,6 @@
 ﻿namespace MyNotes.Backend.Service.Implementations
 {
+    using System;
     using System.Runtime.Serialization;
     using System.ServiceModel;
     using log4net;
@@ -25,7 +26,7 @@
             _sessionFactory = sessionFactory;
         }
 
-        public UserLoginDto Authenticate(string username, string password)
+        public LoggedUserInfoDto Authenticate(string username, string password)
         {
             return (new UserStorageProxy(_sessionFactory)).ValidateUser(username, password);
         }
@@ -33,6 +34,11 @@
         public IList<GroupDto> GetAllGroups()
         {
             return (new GroupStorageProxy(_sessionFactory)).GetAll();
+        }
+
+        public IList<UserDto> GetAllUsers(Guid groupId)
+        {
+            return (new UserStorageProxy(_sessionFactory)).GetAllInGroup(groupId);
         }
     }
 }

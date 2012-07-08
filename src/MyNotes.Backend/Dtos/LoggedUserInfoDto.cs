@@ -4,7 +4,7 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class UserLoginDto
+    public class LoggedUserInfoDto
     {
         [DataMember]
         public Guid Id { get; set; }
@@ -13,7 +13,7 @@
         public string Nickname { get; set; }
 
         [DataMember]
-        public string GroupId { get; set; }
+        public Guid GroupId { get; set; }
 
         [DataMember]
         public string GroupName { get; set; }

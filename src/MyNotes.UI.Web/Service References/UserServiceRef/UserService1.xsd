@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <xs:schema xmlns:tns="http://tempuri.org/" elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
   <xs:import schemaLocation="http://localhost:47834/Service/Hosts/UserService.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos" />
+  <xs:import schemaLocation="http://localhost:47834/Service/Hosts/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:element name="Authenticate">
     <xs:complexType>
       <xs:sequence>
@@ -12,7 +13,7 @@
   <xs:element name="AuthenticateResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos" minOccurs="0" name="AuthenticateResult" nillable="true" type="q1:UserLoginDto" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos" minOccurs="0" name="AuthenticateResult" nillable="true" type="q1:LoggedUserInfoDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
@@ -25,6 +26,20 @@
     <xs:complexType>
       <xs:sequence>
         <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos" minOccurs="0" name="GetAllGroupsResult" nillable="true" type="q2:ArrayOfGroupDto" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsers">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q3="http://schemas.microsoft.com/2003/10/Serialization/" minOccurs="0" name="userId" type="q3:guid" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetAllUsersResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q4="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos" minOccurs="0" name="GetAllUsersResult" nillable="true" type="q4:ArrayOfUserDto" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

@@ -19,6 +19,12 @@
   <wsdl:message name="IUserService_GetAllGroups_OutputMessage">
     <wsdl:part name="parameters" element="tns:GetAllGroupsResponse" />
   </wsdl:message>
+  <wsdl:message name="IUserService_GetAllUsers_InputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsers" />
+  </wsdl:message>
+  <wsdl:message name="IUserService_GetAllUsers_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetAllUsersResponse" />
+  </wsdl:message>
   <wsdl:portType name="IUserService">
     <wsdl:operation name="Authenticate">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/Authenticate" message="tns:IUserService_Authenticate_InputMessage" />
@@ -27,6 +33,10 @@
     <wsdl:operation name="GetAllGroups">
       <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetAllGroups" message="tns:IUserService_GetAllGroups_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetAllGroupsResponse" message="tns:IUserService_GetAllGroups_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <wsdl:input wsaw:Action="http://tempuri.org/IUserService/GetAllUsers" message="tns:IUserService_GetAllUsers_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IUserService/GetAllUsersResponse" message="tns:IUserService_GetAllUsers_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IUserService" type="tns:IUserService">
@@ -42,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="GetAllGroups">
       <soap:operation soapAction="http://tempuri.org/IUserService/GetAllGroups" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllUsers">
+      <soap:operation soapAction="http://tempuri.org/IUserService/GetAllUsers" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

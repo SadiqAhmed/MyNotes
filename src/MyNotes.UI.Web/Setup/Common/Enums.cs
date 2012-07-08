@@ -8,8 +8,8 @@
 
     public enum SessionKey
     {
-        Login,
-        UserDetails,
+        Empty,
+        Loggeduser,
         GroupList,
     }
 }

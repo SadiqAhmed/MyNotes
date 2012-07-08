@@ -1,6 +1,6 @@
-﻿namespace MyNotes.UI.Web.ViewModels.Login
+﻿namespace MyNotes.UI.Web.ViewModels.User
 {
-    public class UserLoginViewModel
+    public class UserCredentialViewModel
     {
         public string Username { get; set; }
 

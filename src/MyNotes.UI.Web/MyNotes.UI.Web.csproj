@@ -243,8 +243,8 @@
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
     <Compile Include="ViewModels\Admin\GroupViewModel.cs" />
-    <Compile Include="ViewModels\Login\UserDetailViewModel.cs" />
-    <Compile Include="ViewModels\Login\UserLoginViewModel.cs" />
+    <Compile Include="ViewModels\User\UserViewModel.cs" />
+    <Compile Include="ViewModels\User\UserCredentialViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Include\Scripts\app\admin.handler.js" />
@@ -338,7 +338,10 @@
     <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.GroupDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.UserLoginDto.datasource">
+    <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.LoggedUserInfoDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.UserDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\UserServiceRef\UserService.disco" />

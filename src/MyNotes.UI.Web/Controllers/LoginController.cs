@@ -1,7 +1,7 @@
 ﻿namespace MyNotes.UI.Web.Controllers
 {
     using System.Web.Mvc;
-    using MyNotes.UI.Web.ViewModels.Login;
+    using MyNotes.UI.Web.ViewModels.User;
     using MyNotes.UI.Web.UserServiceRef;
     using MvcBase.WebHelper.MVC.Attributes;
     using AutoMapper;
@@ -26,14 +26,14 @@
         }
 
         [HttpGet]
-        public virtual ActionResult ValidateCredentials(UserLoginViewModel viewmodel)
+        public virtual ActionResult ValidateCredentials(UserCredentialViewModel viewmodel)
         {
             return new ServiceAction(this)
-                        .Fetch(SessionKey.Login)
-                        .WithResult<UserLoginDto>(() => {
-                                var userDetail = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
-                                Session.SetValue(SessionKey.UserDetails, userDetail);
-                                return userDetail;
+                        .Fetch(SessionKey.Empty)
+                        .WithResult<LoggedUserInfoDto>(() => {
+                                var loggedUserInfo = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
+                                Session.SetValue(SessionKey.Loggeduser, loggedUserInfo);
+                                return loggedUserInfo;
                             })
                         .Execute();
         }

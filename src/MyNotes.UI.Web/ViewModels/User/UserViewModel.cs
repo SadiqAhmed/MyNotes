@@ -1,10 +1,14 @@
-﻿namespace MyNotes.UI.Web.ViewModels.Login
+﻿namespace MyNotes.UI.Web.ViewModels.User
 {
     using System;
 
-    public class UserDetailViewModel
+    public class UserViewModel
     {
         public Guid Id { get; set; }
+
+        public string Username { get; set; }
+
+        public string Name { get; set; }
 
         public string Nickname { get; set; }
 

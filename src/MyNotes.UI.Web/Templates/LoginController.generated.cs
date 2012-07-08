@@ -93,7 +93,7 @@ namespace MyNotes.UI.Web.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult ValidateCredentials(MyNotes.UI.Web.ViewModels.Login.UserLoginViewModel viewmodel) {
+        public override System.Web.Mvc.ActionResult ValidateCredentials(MyNotes.UI.Web.ViewModels.User.UserCredentialViewModel viewmodel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.ValidateCredentials);
             callInfo.RouteValueDictionary.Add("viewmodel", viewmodel);
             return callInfo;
