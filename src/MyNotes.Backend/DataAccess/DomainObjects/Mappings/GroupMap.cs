@@ -9,6 +9,8 @@
         {
             Map(x => x.Name)
                 .Not.Nullable();
+            Map(x => x.IsSystem)
+                .Not.Nullable();
             HasMany<User>(x => x.Users)
                 .Inverse()
                 .AsBag()

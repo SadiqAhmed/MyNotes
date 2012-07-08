@@ -3,10 +3,25 @@
   <xs:import schemaLocation="http://localhost:47834/Service/Hosts/UserService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
   <xs:complexType name="UserLoginDto">
     <xs:sequence>
+      <xs:element minOccurs="0" name="GroupId" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
       <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UserLoginDto" nillable="true" type="tns:UserLoginDto" />
+  <xs:complexType name="ArrayOfGroupDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupDto" nillable="true" type="tns:GroupDto" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfGroupDto" nillable="true" type="tns:ArrayOfGroupDto" />
+  <xs:complexType name="GroupDto">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Id" type="ser:guid" />
+      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
+      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="GroupDto" nillable="true" type="tns:GroupDto" />
 </xs:schema>

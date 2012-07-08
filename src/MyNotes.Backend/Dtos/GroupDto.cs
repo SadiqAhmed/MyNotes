@@ -4,18 +4,15 @@
     using System.Runtime.Serialization;
 
     [DataContract]
-    public class UserLoginDto
+    public class GroupDto
     {
         [DataMember]
         public Guid Id { get; set; }
 
         [DataMember]
-        public string Nickname { get; set; }
+        public string Name { get; set; }
 
         [DataMember]
-        public string GroupId { get; set; }
-
-        [DataMember]
-        public string GroupName { get; set; }
+        public virtual bool IsSystem { get; set; }
     }
 }

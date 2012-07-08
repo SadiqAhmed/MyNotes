@@ -10,5 +10,6 @@
     {
         Login,
         UserDetails,
+        GroupList,
     }
 }

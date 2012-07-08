@@ -1,0 +1,31 @@
+﻿@model IEnumerable<MyNotes.UI.Web.ViewModels.Admin.GroupViewModel>
+
+<div class="row span8">
+    <table class="table table-striped">  
+        <thead>
+            <tr>
+                <th>S#</th>
+                <th>Name</th>
+                <th>System A/c</th>
+            </tr>  
+        </thead>  
+        <tbody>
+            @{
+                var index = 1;
+                foreach (var group in Model)
+                { 
+                    <tr data-id="@group.Id">
+                        <td>@index</td>
+                        <td>@group.Name</td>
+                        <td>@(group.IsSystem ? "Yes" : "No")</td>
+                    </tr>
+                    index += 1;
+                }
+            }
+        </tbody>  
+    </table>
+    <div class="row" >&nbsp;</div>
+    <div class="row pull-right">
+        <button id="btnNewUser" class="btn btn-primary">New User</button>
+    </div>
+</div>

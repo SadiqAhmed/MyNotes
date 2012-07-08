@@ -104,7 +104,7 @@
     <Reference Include="Microsoft.Web.Optimization, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Web.Optimization.0.1\lib\net40\Microsoft.Web.Optimization.dll</HintPath>
     </Reference>
-    <Reference Include="Newtonsoft.Json">
+    <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>..\packages\Newtonsoft.Json.4.5.7\lib\net40\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="RestSharp">
@@ -218,6 +218,7 @@
     <Compile Include="Setup\ActionApi\ServiceAction.cs" />
     <Compile Include="Setup\ActionApi\ServiceGetAction.cs" />
     <Compile Include="Setup\ActionApi\ServiceSetAction.cs" />
+    <Compile Include="Setup\StartupTasks\Component\AutoMappings\GroupDtoMappingSetup.cs" />
     <Compile Include="Setup\StartupTasks\Component\AutoMappings\UserDtoMappingSetup.cs" />
     <Compile Include="Setup\StartupTasks\Component\MinifyBundles\CssBundles.cs" />
     <Compile Include="Setup\StartupTasks\Component\MinifyBundles\JsBundles.cs" />
@@ -241,11 +242,15 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>T4MVC.tt</DependentUpon>
     </Compile>
+    <Compile Include="ViewModels\Admin\GroupViewModel.cs" />
     <Compile Include="ViewModels\Login\UserDetailViewModel.cs" />
     <Compile Include="ViewModels\Login\UserLoginViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Include\Scripts\app\admin.handler.js" />
     <Content Include="Include\Scripts\app\login.js" />
+    <Content Include="Include\Scripts\base\app.common.js" />
+    <Content Include="Include\Scripts\base\core.handler.js" />
     <Content Include="Include\Scripts\jQuery\chosen.jquery.js" />
     <Content Include="Include\Scripts\jQuery\jquery.ba-bbq.min.js" />
     <Content Include="Include\Scripts\jQuery\jquery.blockUI.js" />
@@ -330,6 +335,9 @@
     <None Include="Service References\EchoServiceRef\EchoService1.xsd">
       <SubType>Designer</SubType>
     </None>
+    <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.GroupDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\UserServiceRef\MyNotes.UI.Web.UserServiceRef.UserLoginDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
@@ -366,6 +374,8 @@
     <Content Include="Views\Admin\Index.cshtml" />
     <Content Include="Views\Shared\_menuBar.cshtml" />
     <Content Include="Views\Shared\_footer.cshtml" />
+    <Content Include="Views\Admin\_groups.cshtml" />
+    <Content Include="Views\Admin\_users.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -424,7 +434,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>3929</DevelopmentServerPort>
+          <DevelopmentServerPort>21254</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

@@ -29,9 +29,9 @@
             </div>
         </div>
         
-        <div class="container">
+        <div id="mainContainer" class="center">
             <div class="row">
-                <div id="loginSection" class="hero-unit offset4 span3">
+                <div id="loginSection" class="hero-unit offset6 span3">
                     <div class="row center"><h3>User Login</h3></div>
                     <div id="errMsg" class="row center">&nbsp;</div>
                     <div class="row center">
@@ -52,8 +52,6 @@
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js" type="text/javascript"></script>
         <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/main.jsbundle.script")" type="text/javascript"></script>
         <script src="@Microsoft.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Include/Cache/login.script")" type="text/javascript"></script>
-        <script type="text/javascript" src="@Url.Content("~/Include/Scripts/base/core.ajax.js")" ></script>
-        <script type="text/javascript" src="@Url.Content("~/Include/Scripts/base/core.forms.js")" ></script>
         <script type="text/javascript" >
             var validateUrl = '@Url.Action(MVC.Login.Actions.ValidateCredentials())';
             var loginSuccessUrl = '@Url.Action(MVC.Home.Actions.Index())';

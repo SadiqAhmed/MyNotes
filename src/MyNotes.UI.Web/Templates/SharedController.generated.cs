@@ -29,6 +29,7 @@ namespace T4MVC {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
             public readonly string _contentScreen = "~/Views/Shared/_contentScreen.cshtml";
+            public readonly string _footer = "~/Views/Shared/_footer.cshtml";
             public readonly string _Layout = "~/Views/Shared/_Layout.cshtml";
             public readonly string _menuBar = "~/Views/Shared/_menuBar.cshtml";
             public readonly string _popupScreen = "~/Views/Shared/_popupScreen.cshtml";

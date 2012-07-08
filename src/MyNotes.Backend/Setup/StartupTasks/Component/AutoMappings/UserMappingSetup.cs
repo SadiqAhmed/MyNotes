@@ -9,6 +9,7 @@
         public void Add()
         {
             Mapper.CreateMap<User, UserLoginDto>()
+                .ForMember(d => d.GroupId, o => o.MapFrom(s => s.Group.Id))
                 .ForMember(d => d.GroupName, o => o.MapFrom(s => s.Group.Name));
         }
     }

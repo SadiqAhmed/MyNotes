@@ -19,5 +19,10 @@
         /// Gets or Sets the list of users in the group
         /// </summary>
         public virtual IList<User> Users { get; set; }
+
+        /// <summary>
+        /// Gets or Sets the is system group
+        /// </summary>
+        public virtual bool IsSystem { get; set; }
     }
 }

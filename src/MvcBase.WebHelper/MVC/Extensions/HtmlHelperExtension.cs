@@ -4,17 +4,19 @@
     using System.Web.Mvc;
     using System.Text;
     using System.Web.Routing;
+    using MvcBase.WebHelper.MVC.Extensions;
 
     public static class HtmlHelperExtension
     {
-        public static MvcHtmlString ActionLinkWithFragment(this HtmlHelper htmlHelper, string text, ActionResult fragmentAction, string title = null, string cssClass = null)
+        public static MvcHtmlString ActionLinkWithFragment(this HtmlHelper htmlHelper, string text, ActionResult fragmentAction, string cssClass = null, string dataOptions = null)
         {
-            var mvcActionResult = fragmentAction as IMvcResult;
+            var mvcActionResult = fragmentAction.AsMVCResult() as IMvcResult;
 
             if (mvcActionResult == null)
                 return null;
 
-            var linkCssClass = new StringBuilder();
+            var options = string.Empty;
+
             var actionLink = string.Format("{0}#{1}",
                         RouteTable.Routes.GetVirtualPathForArea(htmlHelper.ViewContext.RequestContext,
                                                         new RouteValueDictionary(new
@@ -25,41 +27,12 @@
                                                         })).VirtualPath,
                          mvcActionResult.Action);
 
-            if (!string.IsNullOrEmpty(cssClass))
-                linkCssClass.Append(cssClass.Trim());
+            if (!string.IsNullOrEmpty(dataOptions))
+                options = "data-options=\"" + dataOptions.Trim() + "\"";
             
-            if (title != null)
-            {
-                linkCssClass.Append(" {title: '");
-                linkCssClass.Append(title);
-                linkCssClass.Append("' } ");
-            }
-
-            return new MvcHtmlString(string.Format("<a id=\"{0}\" href=\"{1}\" class=\"jqAddress {2}\">{3}</a>", Guid.NewGuid(), actionLink, linkCssClass.ToString(), text));
-        }
-
-        public static MvcHtmlString ActionLink(this HtmlHelper htmlHelper, string text, ActionResult action, string cssClass)
-        {
-            var mvcActionResult = action as IMvcResult;
-
-            if (mvcActionResult == null)
-                return null;
-
-            var linkCssClass = new StringBuilder();
-            var actionLink = string.Format("{0}/{1}",
-                        RouteTable.Routes.GetVirtualPathForArea(htmlHelper.ViewContext.RequestContext,
-                                                        new RouteValueDictionary(new
-                                                        {
-                                                            area = string.Empty,
-                                                            controller = mvcActionResult.Controller,
-                                                            action = string.Empty,
-                                                        })).VirtualPath,
-                         mvcActionResult.Action);
-
-            if (!string.IsNullOrEmpty(cssClass))
-                linkCssClass.Append(cssClass.Trim());
-
-            return new MvcHtmlString(string.Format("<a id=\"{0}\" href=\"{1}\" class=\"jqAddress {2}\">{3}</a>", Guid.NewGuid(), actionLink, linkCssClass.ToString(), text));
+            return new MvcHtmlString(string.Format("<a id=\"{0}\" href=\"{1}\" class=\"jqAddress {2}\" {3}>{4}</a>", Guid.NewGuid(), actionLink, 
+                (string.IsNullOrEmpty(cssClass) ? string.Empty : cssClass.Trim()),
+                (string.IsNullOrEmpty(options) ? string.Empty : options.Trim()), text));
         }
     }
 }

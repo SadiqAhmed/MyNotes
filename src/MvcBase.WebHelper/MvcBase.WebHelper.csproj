@@ -113,6 +113,7 @@
     <Compile Include="Attributes\NoCache.cs" />
     <Compile Include="MVC\Attributes\JsonFilterAttribute.cs" />
     <Compile Include="MVC\Extensions\ActionResultExtension.cs" />
+    <Compile Include="MVC\Extensions\MvcHtmlExtension.cs" />
     <Compile Include="MVC\IMvcResult.cs" />
     <Compile Include="MVC\MvcResult.cs" />
     <Compile Include="Extensions\BoolExtension.cs" />

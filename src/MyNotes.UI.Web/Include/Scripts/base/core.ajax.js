@@ -14,6 +14,7 @@
             data: actionData,
             dataType: actionDataType,
             success: function (response, status, xhr) {
+                console.log(response);
                 mynotes.ClearAlertMessage();
                 if (response) {
                     if (!response.HasError) {
@@ -24,12 +25,14 @@
                             window.location = response.RedirectUrl;
 
                         if (response.PopupView)
-                            $('#' + mynotes.Constants.LeftView).html(response.DataCaptureView);
+                            $('#' + mynotes.Constants.PopupView).html(response.PopupView);
 
                         if (response.ContentView)
-                            $('#' + mynotes.Constants.RightView).html(response.ContentView);
+                            $('#' + mynotes.Constants.ContentView).html(response.ContentView);
 
                         if (callback) callback(response);
+
+                        handler.bindFunctions($('body'));
 
                         if (blockOnCall) {
                             $('#main').unblock();

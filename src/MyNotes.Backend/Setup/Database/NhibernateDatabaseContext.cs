@@ -31,6 +31,7 @@
                     group = new Group
                     {
                         Name = _groupName,
+                        IsSystem = true,
                     };
 
                     var user = new User

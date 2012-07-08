@@ -9,7 +9,7 @@ $(function () {
         // for ajax call url should have '#/'
         if (location.hash.indexOf('#') >= 0) {
             newUrl = location.pathname + location.hash.replace('#', '/');
-            $.AjaxGet({ url: newUrl });
+            $.ajaxGet({ url: newUrl });
         }
         else {
             window.location = location.pathname;

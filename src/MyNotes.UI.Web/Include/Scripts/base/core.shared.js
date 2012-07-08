@@ -5,10 +5,8 @@ var mynotes = {
     },
     Constants: {
         AlertMessage: 'alertMessage',
-        LeftView: 'leftContainer',
-        RightView: 'rightContainer',
-        DataEditorContainerView: 'dataEditorContainerView',
-        ContentContainerView: 'contentContainerView'
+        PopupView: 'popupContainer',
+        ContentView: 'mainContainer'
     },
     // methods
     DisplayAlertMessage: function (text) {

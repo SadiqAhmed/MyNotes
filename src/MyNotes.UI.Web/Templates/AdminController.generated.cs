@@ -23,9 +23,6 @@ using T4MVC;
 namespace MyNotes.UI.Web.Controllers {
     public partial class AdminController {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
-        public AdminController() { }
-
-        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         protected AdminController(Dummy d) { }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -56,11 +53,15 @@ namespace MyNotes.UI.Web.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNamesClass {
             public readonly string Index = "Index";
+            public readonly string Groups = "Groups";
+            public readonly string Users = "Users";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionNameConstants {
             public const string Index = "Index";
+            public const string Groups = "Groups";
+            public const string Users = "Users";
         }
 
 
@@ -69,6 +70,8 @@ namespace MyNotes.UI.Web.Controllers {
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string _groups = "~/Views/Admin/_groups.cshtml";
+            public readonly string _users = "~/Views/Admin/_users.cshtml";
             public readonly string Index = "~/Views/Admin/Index.cshtml";
         }
     }
@@ -79,6 +82,16 @@ namespace MyNotes.UI.Web.Controllers {
 
         public override System.Web.Mvc.ActionResult Index() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Index);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Groups() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Groups);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult Users() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Users);
             return callInfo;
         }
 

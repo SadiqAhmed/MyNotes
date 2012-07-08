@@ -10,7 +10,7 @@
         {
             Id(x => x.Id)
                 .GeneratedBy.Guid();
-            Map(x => x.IsActive).Default("1")
+            Map(x => x.IsActive)
                 .Not.Nullable();
             Map(x => x.CreatedDate)
                 .Not.Nullable();

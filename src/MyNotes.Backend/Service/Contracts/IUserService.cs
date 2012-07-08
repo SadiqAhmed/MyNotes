@@ -2,14 +2,15 @@
 {
     using System.ServiceModel;
     using MyNotes.Backend.Dtos;
+    using System.Collections.Generic;
 
     [ServiceContract]
     public interface IUserService
     {
         [OperationContract]
-        string PrintName(string name);
+        UserLoginDto Authenticate(string username, string password);
 
         [OperationContract]
-        UserLoginDto Authenticate(string username, string password);
+        IList<GroupDto> GetAllGroups();
     }
 }

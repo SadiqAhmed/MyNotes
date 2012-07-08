@@ -12,6 +12,7 @@
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
     using MyNotes.Backend.DataAccess.DomainObjects.Repositories;
     using MyNotes.Backend.DataAccess.StorageProxies;
+    using System.Collections.Generic;
 
     internal class UserService : IUserService
     {
@@ -24,15 +25,14 @@
             _sessionFactory = sessionFactory;
         }
 
-        public string PrintName(string name)
-        {
-            _logger.Info(string.Format("PrintName was called with parameter - {0}", name));
-            return string.Format("Hello world, by {0}", name);
-        }
-
         public UserLoginDto Authenticate(string username, string password)
         {
             return (new UserStorageProxy(_sessionFactory)).ValidateUser(username, password);
+        }
+
+        public IList<GroupDto> GetAllGroups()
+        {
+            return (new GroupStorageProxy(_sessionFactory)).GetAll();
         }
     }
 }

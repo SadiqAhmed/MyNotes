@@ -23,6 +23,9 @@ namespace MyNotes.UI.Web.UserServiceRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string GroupIdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string GroupNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -38,6 +41,19 @@ namespace MyNotes.UI.Web.UserServiceRef {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string GroupId {
+            get {
+                return this.GroupIdField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.GroupIdField, value) != true)) {
+                    this.GroupIdField = value;
+                    this.RaisePropertyChanged("GroupId");
+                }
             }
         }
         
@@ -90,15 +106,92 @@ namespace MyNotes.UI.Web.UserServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="GroupDto", Namespace="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class GroupDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private System.Guid IdField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSystemField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string NameField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public System.Guid Id {
+            get {
+                return this.IdField;
+            }
+            set {
+                if ((this.IdField.Equals(value) != true)) {
+                    this.IdField = value;
+                    this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSystem {
+            get {
+                return this.IsSystemField;
+            }
+            set {
+                if ((this.IsSystemField.Equals(value) != true)) {
+                    this.IsSystemField = value;
+                    this.RaisePropertyChanged("IsSystem");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Name {
+            get {
+                return this.NameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.NameField, value) != true)) {
+                    this.NameField = value;
+                    this.RaisePropertyChanged("Name");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="UserServiceRef.IUserService")]
     public interface IUserService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/PrintName", ReplyAction="http://tempuri.org/IUserService/PrintNameResponse")]
-        string PrintName(string name);
-        
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/Authenticate", ReplyAction="http://tempuri.org/IUserService/AuthenticateResponse")]
         MyNotes.UI.Web.UserServiceRef.UserLoginDto Authenticate(string username, string password);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IUserService/GetAllGroups", ReplyAction="http://tempuri.org/IUserService/GetAllGroupsResponse")]
+        MyNotes.UI.Web.UserServiceRef.GroupDto[] GetAllGroups();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -128,12 +221,12 @@ namespace MyNotes.UI.Web.UserServiceRef {
                 base(binding, remoteAddress) {
         }
         
-        public string PrintName(string name) {
-            return base.Channel.PrintName(name);
-        }
-        
         public MyNotes.UI.Web.UserServiceRef.UserLoginDto Authenticate(string username, string password) {
             return base.Channel.Authenticate(username, password);
+        }
+        
+        public MyNotes.UI.Web.UserServiceRef.GroupDto[] GetAllGroups() {
+            return base.Channel.GetAllGroups();
         }
     }
 }

@@ -19,9 +19,11 @@
             mainJsBundle.AddFile("~/Include/Scripts/misc/modernizr-2.5.3.js");
             mainJsBundle.AddFile("~/Include/Scripts/misc/bootstrap.min.js");
             mainJsBundle.AddFile("~/Include/Scripts/base/core.shared.js");
-            //mainJsBundle.AddFile("~/Include/Scripts/base/core.ajax.js");
+            mainJsBundle.AddFile("~/Include/Scripts/base/core.handler.js");
+            mainJsBundle.AddFile("~/Include/Scripts/base/core.ajax.js");
             mainJsBundle.AddFile("~/Include/Scripts/base/core.address.js");
-            //mainJsBundle.AddFile("~/Include/Scripts/base/core.forms.js");
+            mainJsBundle.AddFile("~/Include/Scripts/base/core.forms.js");
+            mainJsBundle.AddFile("~/Include/Scripts/base/app.common.js");
             BundleTable.Bundles.Add(mainJsBundle);
 
             var loginBundle = new Bundle("~/Include/Cache/login.script", typeof(YuiJsMinify));

@@ -1,6 +1,27 @@
-﻿@{
+﻿@using MvcBase.WebHelper.MVC.Extensions;
+
+@{
     ViewBag.Title = "My Notes - Admin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>My Notes - Admin</h2>
+<div class="hero-unit">
+    <div class="row span8">
+        <ul class="nav nav-pills">  
+            <li class="jqTab active">@Html.ActionLinkWithFragment("Groups", MVC.Admin.Actions.Groups(), "Groups")</li>     
+            <li class="jqTab">@Html.ActionLinkWithFragment("Users", MVC.Admin.Actions.Users(), "Users")</li>  
+        </ul>        
+    </div>
+    <div id="mainContainer" class="hero-unit">
+    
+    </div>
+</div>
+
+
+
+@section scripts{
+    <script type="text/javascript" src="@Url.Content("~/Include/Scripts/app/admin.handler.js")" ></script>
+    <script type="text/javascript" >
+        var groupListUrl = '@Url.Action(MVC.Admin.Actions.Groups())';
+    </script>
+}
