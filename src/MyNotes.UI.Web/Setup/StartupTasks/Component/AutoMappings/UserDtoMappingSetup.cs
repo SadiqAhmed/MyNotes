@@ -2,7 +2,7 @@
 {
     using AutoMapper;
     using MvcBase.WebHelper.StartupTasks;
-    using MyNotes.UI.Web.UserServiceRef;
+    using MyNotes.UI.Web.AdminServiceRef;
     using MyNotes.UI.Web.ViewModels.User;
 
     public class UserDtoMappingSetup : IIncludeComponent

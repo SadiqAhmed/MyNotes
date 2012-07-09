@@ -1,11 +1,11 @@
-﻿@using MvcBase.WebHelper.MVC.Extensions;
+﻿@using MvcBase.WebHelper.Mvc.Extensions;
 
 @{
     ViewBag.Title = "My Notes - Admin";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="hero-unit">
+<div class="hero-unit" style="position:absolute;">
     <div class="row span8">
         <ul class="nav nav-pills">  
             <li class="jqTab active">@Html.ActionLinkWithFragment("Groups", MVC.Admin.Actions.Groups(), "Groups")</li>     
@@ -17,11 +17,10 @@
     </div>
 </div>
 
-
-
 @section scripts{
     <script type="text/javascript" src="@Url.Content("~/Include/Scripts/app/admin.handler.js")" ></script>
     <script type="text/javascript" >
         var groupListUrl = '@Url.Action(MVC.Admin.Actions.Groups())';
+        var addGroupUrl = '@Url.Action(MVC.Admin.Actions.AddNewGroup())';
     </script>
 }

@@ -22,12 +22,25 @@
 
             using (ISession session = _sessionFactory.OpenSession())
             {
-                IRepository<Group> userRepository = new Repository<Group>(session);
-                var groups = userRepository.FindAll().List();
+                IRepository<Group> groupRepository = new Repository<Group>(session);
+                var groups = groupRepository.FindAll().List();
                 groupDtos = Mapper.Map<IList<GroupDto>>(groups);
             }
 
             return groupDtos;
+        }
+
+        public bool AddGroup(string name)
+        {
+            using (ISession session = _sessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                IRepository<Group> groupRepository = new Repository<Group>(session);
+                groupRepository.Add(new Group { Name = name });
+                transaction.Commit();
+                return true;
+            }
+            return false;
         }
     }
 }

@@ -111,20 +111,20 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Attributes\NoCache.cs" />
-    <Compile Include="MVC\Attributes\JsonFilterAttribute.cs" />
-    <Compile Include="MVC\Extensions\ActionResultExtension.cs" />
-    <Compile Include="MVC\Extensions\MvcHtmlExtension.cs" />
-    <Compile Include="MVC\IMvcResult.cs" />
-    <Compile Include="MVC\MvcResult.cs" />
+    <Compile Include="Mvc\Attributes\JsonFilterAttribute.cs" />
+    <Compile Include="Mvc\Extensions\ActionResultExtension.cs" />
+    <Compile Include="Mvc\Extensions\MvcHtmlExtension.cs" />
+    <Compile Include="Mvc\IMvcResult.cs" />
+    <Compile Include="Mvc\MvcResult.cs" />
     <Compile Include="Extensions\BoolExtension.cs" />
-    <Compile Include="MVC\Extensions\ControllerContextExtension.cs" />
-    <Compile Include="MVC\Extensions\HtmlHelperExtension.cs" />
-    <Compile Include="MVC\Extensions\JqueryExtension.cs" />
-    <Compile Include="MVC\Extensions\UrlHelperExtension.cs" />
-    <Compile Include="MVC\Minifications\YuiCssMinify.cs" />
-    <Compile Include="MVC\Minifications\YuiJsMinify.cs" />
-    <Compile Include="MVC\Responses\AjaxResponse.cs" />
-    <Compile Include="MVC\Responses\RefreshOptions.cs" />
+    <Compile Include="Mvc\Extensions\ControllerContextExtension.cs" />
+    <Compile Include="Mvc\Extensions\HtmlHelperExtension.cs" />
+    <Compile Include="Mvc\Extensions\JqueryExtension.cs" />
+    <Compile Include="Mvc\Extensions\UrlHelperExtension.cs" />
+    <Compile Include="Mvc\Minifications\YuiCssMinify.cs" />
+    <Compile Include="Mvc\Minifications\YuiJsMinify.cs" />
+    <Compile Include="Mvc\Responses\AjaxResponse.cs" />
+    <Compile Include="Mvc\Responses\RefreshOptions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="StartupTasks\ControllerTasks\UnityDependencyResolver.cs" />
     <Compile Include="StartupTasks\IIncludeComponent.cs" />

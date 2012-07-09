@@ -1,10 +1,10 @@
-﻿namespace MvcBase.WebHelper.MVC.Extensions
+﻿namespace MvcBase.WebHelper.Mvc.Extensions
 {
     using System;
     using System.Web.Mvc;
     using System.Text;
     using System.Web.Routing;
-    using MvcBase.WebHelper.MVC.Extensions;
+    using MvcBase.WebHelper.Mvc.Extensions;
 
     public static class HtmlHelperExtension
     {

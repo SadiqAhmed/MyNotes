@@ -1,4 +1,4 @@
-﻿namespace MvcBase.WebHelper.MVC.Attributes
+﻿namespace MvcBase.WebHelper.Mvc.Attributes
 {
     using System;
     using System.Web.Mvc;

@@ -6,9 +6,15 @@
     using System.Collections.Generic;
 
     [ServiceContract]
-    public interface IUserService
+    public interface IAdminService
     {
         [OperationContract]
-        LoggedUserInfoDto Authenticate(string username, string password);
+        IList<GroupDto> GetAllGroups();
+
+        [OperationContract]
+        IList<UserDto> GetAllUsers(Guid userId);
+
+        [OperationContract]
+        bool AddGroup(string name);
     }
 }

@@ -3,7 +3,7 @@
     using System;
     using System.Web.Mvc;
     using MyNotes.UI.Web.Setup.Common;
-    using MvcBase.WebHelper.MVC.Extensions;
+    using MvcBase.WebHelper.Mvc.Extensions;
 
     public class ServiceSetAction : IServiceSetAction
     {

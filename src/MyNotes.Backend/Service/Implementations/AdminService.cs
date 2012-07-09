@@ -15,20 +15,30 @@
     using MyNotes.Backend.DataAccess.StorageProxies;
     using System.Collections.Generic;
 
-    internal class UserService : IUserService
+    internal class AdminService : IAdminService
     {
         ILog _logger;
         ISessionFactory _sessionFactory;
 
-        public UserService(ILog logger, ISessionFactory sessionFactory)
+        public AdminService(ILog logger, ISessionFactory sessionFactory)
         {
             _logger = logger;
             _sessionFactory = sessionFactory;
         }
 
-        public LoggedUserInfoDto Authenticate(string username, string password)
+        public IList<GroupDto> GetAllGroups()
         {
-            return (new UserStorageProxy(_sessionFactory)).ValidateUser(username, password);
+            return (new GroupStorageProxy(_sessionFactory)).GetAll();
+        }
+
+        public IList<UserDto> GetAllUsers(Guid groupId)
+        {
+            return (new UserStorageProxy(_sessionFactory)).GetAllInGroup(groupId);
+        }
+
+        public bool AddGroup(string name)
+        {
+            return (new GroupStorageProxy(_sessionFactory)).AddGroup(name);
         }
     }
 }

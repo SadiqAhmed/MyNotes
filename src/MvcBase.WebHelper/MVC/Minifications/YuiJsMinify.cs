@@ -1,4 +1,4 @@
-﻿namespace MvcBase.WebHelper.MVC.Minifications
+﻿namespace MvcBase.WebHelper.Mvc.Minifications
 {
     using System;
     using Microsoft.Web.Optimization;
@@ -13,8 +13,8 @@
                 throw new ArgumentNullException("bundle");
             }
 
-            bundle.Content = JavaScriptCompressor.Compress(bundle.Content);
-            bundle.ContentType = "text/javascript";
+            //bundle.Content = JavaScriptCompressor.Compress(bundle.Content);
+            //bundle.ContentType = "text/javascript";
         }
     }
 }

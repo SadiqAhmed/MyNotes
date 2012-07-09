@@ -1,4 +1,4 @@
-﻿namespace MvcBase.WebHelper.MVC.Extensions
+﻿namespace MvcBase.WebHelper.Mvc.Extensions
 {
     using System.Linq;
     using System.Web.Mvc;

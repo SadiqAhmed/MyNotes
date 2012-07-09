@@ -1,7 +1,7 @@
 ﻿namespace MyNotes.UI.Web.Setup.ActionApi
 {
     using System.Web.Mvc;
-    using MvcBase.WebHelper.MVC.Extensions;
+    using MvcBase.WebHelper.Mvc.Extensions;
     using Newtonsoft.Json;
 
     public class JsonResponseActionResult : ActionResult

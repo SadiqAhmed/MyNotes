@@ -1,4 +1,4 @@
-﻿namespace MvcBase.WebHelper.MVC.Responses
+﻿namespace MvcBase.WebHelper.Mvc.Responses
 {
     public class AjaxResponse
     {

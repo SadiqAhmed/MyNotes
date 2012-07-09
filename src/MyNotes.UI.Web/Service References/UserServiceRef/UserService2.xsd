@@ -10,35 +10,4 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="LoggedUserInfoDto" nillable="true" type="tns:LoggedUserInfoDto" />
-  <xs:complexType name="ArrayOfGroupDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="GroupDto" nillable="true" type="tns:GroupDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfGroupDto" nillable="true" type="tns:ArrayOfGroupDto" />
-  <xs:complexType name="GroupDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="IsSystem" type="xs:boolean" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="GroupDto" nillable="true" type="tns:GroupDto" />
-  <xs:complexType name="ArrayOfUserDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="UserDto" nillable="true" type="tns:UserDto" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfUserDto" nillable="true" type="tns:ArrayOfUserDto" />
-  <xs:complexType name="UserDto">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="GroupId" type="ser:guid" />
-      <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="Name" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="Username" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="UserDto" nillable="true" type="tns:UserDto" />
 </xs:schema>

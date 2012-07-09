@@ -37,6 +37,11 @@ namespace MyNotes.UI.Web.Controllers {
             return RedirectToRoutePermanent(callInfo.RouteValueDictionary);
         }
 
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult SaveGroup() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.SaveGroup);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AdminController Actions { get { return MVC.Admin; } }
@@ -55,6 +60,8 @@ namespace MyNotes.UI.Web.Controllers {
             public readonly string Index = "Index";
             public readonly string Groups = "Groups";
             public readonly string Users = "Users";
+            public readonly string AddNewGroup = "AddNewGroup";
+            public readonly string SaveGroup = "SaveGroup";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -62,14 +69,25 @@ namespace MyNotes.UI.Web.Controllers {
             public const string Index = "Index";
             public const string Groups = "Groups";
             public const string Users = "Users";
+            public const string AddNewGroup = "AddNewGroup";
+            public const string SaveGroup = "SaveGroup";
         }
 
 
+        static readonly ActionParamsClass_SaveGroup s_params_SaveGroup = new ActionParamsClass_SaveGroup();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SaveGroup SaveGroupParams { get { return s_params_SaveGroup; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SaveGroup {
+            public readonly string groupViewModel = "groupViewModel";
+        }
         static readonly ViewNames s_views = new ViewNames();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public ViewNames Views { get { return s_views; } }
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ViewNames {
+            public readonly string _addGroup = "~/Views/Admin/_addGroup.cshtml";
+            public readonly string _addUser = "~/Views/Admin/_addUser.cshtml";
             public readonly string _groups = "~/Views/Admin/_groups.cshtml";
             public readonly string _users = "~/Views/Admin/_users.cshtml";
             public readonly string Index = "~/Views/Admin/Index.cshtml";
@@ -92,6 +110,17 @@ namespace MyNotes.UI.Web.Controllers {
 
         public override System.Web.Mvc.ActionResult Users() {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.Users);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult AddNewGroup() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AddNewGroup);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult SaveGroup(MyNotes.UI.Web.ViewModels.Admin.GroupViewModel groupViewModel) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.SaveGroup);
+            callInfo.RouteValueDictionary.Add("groupViewModel", groupViewModel);
             return callInfo;
         }
 

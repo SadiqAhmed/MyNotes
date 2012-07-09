@@ -3,7 +3,7 @@
     using System.Web.Mvc;
     using MyNotes.UI.Web.ViewModels.User;
     using MyNotes.UI.Web.UserServiceRef;
-    using MvcBase.WebHelper.MVC.Attributes;
+    using MvcBase.WebHelper.Mvc.Attributes;
     using AutoMapper;
     using MyNotes.UI.Web.Setup;
     using MyNotes.UI.Web.Setup.ActionApi;

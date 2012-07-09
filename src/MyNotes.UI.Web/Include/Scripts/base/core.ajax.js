@@ -18,19 +18,20 @@
                 mynotes.ClearAlertMessage();
                 if (response) {
                     if (!response.HasError) {
-                        if (eventName)
-                            $.event.trigger(eventName, response);
-
                         if (response.RedirectUrl)
                             window.location = response.RedirectUrl;
 
-                        if (response.PopupView)
-                            $('#' + mynotes.Constants.PopupView).html(response.PopupView);
+                        if (response.PopupView) {
+                            $(mynotes.Constants.PopupView).html(response.PopupView).modal();
+                        }
 
                         if (response.ContentView)
-                            $('#' + mynotes.Constants.ContentView).html(response.ContentView);
+                            $(mynotes.Constants.ContentView).html(response.ContentView);
 
                         if (callback) callback(response);
+
+                        if (eventName)
+                            $.event.trigger(eventName, response);
 
                         handler.bindFunctions($('body'));
 

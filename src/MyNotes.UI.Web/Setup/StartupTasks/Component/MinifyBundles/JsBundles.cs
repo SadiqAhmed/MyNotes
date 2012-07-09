@@ -2,7 +2,7 @@
 {
     using MvcBase.WebHelper.StartupTasks;
     using Microsoft.Web.Optimization;
-    using MvcBase.WebHelper.MVC.Minifications;
+    using MvcBase.WebHelper.Mvc.Minifications;
 
     public class JsBundles : IIncludeComponent
     {

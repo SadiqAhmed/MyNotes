@@ -5,8 +5,8 @@ var mynotes = {
     },
     Constants: {
         AlertMessage: 'alertMessage',
-        PopupView: 'popupContainer',
-        ContentView: 'mainContainer'
+        PopupView: '#popupContainer',
+        ContentView: '#mainContainer'
     },
     // methods
     DisplayAlertMessage: function (text) {

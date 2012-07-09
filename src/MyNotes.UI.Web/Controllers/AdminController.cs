@@ -1,7 +1,7 @@
 ﻿namespace MyNotes.UI.Web.Controllers
 {
     using System.Web.Mvc;
-    using MyNotes.UI.Web.UserServiceRef;
+    using MyNotes.UI.Web.AdminServiceRef;
     using MyNotes.UI.Web.Setup.ActionApi;
     using MyNotes.UI.Web.Setup.Common;
     using MyNotes.UI.Web.ViewModels.Admin;
@@ -9,14 +9,15 @@
     using AutoMapper;
     using MyNotes.UI.Web.Setup.Extensions;
     using MyNotes.UI.Web.ViewModels.User;
+    using MyNotes.UI.Web.UserServiceRef;
 
     public partial class AdminController : Controller
     {
-        IUserService _userService;
+        IAdminService _adminService;
 
-        public AdminController(IUserService userService)
+        public AdminController(IAdminService adminService)
         {
-            _userService = userService;
+            _adminService = adminService;
         }
 
         [HttpGet]
@@ -33,7 +34,7 @@
                         .WithContent<IList<GroupViewModel>>(MVC.Admin.Views._groups,
                                 () =>
                                 {
-                                    var groups = _userService.GetAllGroups();
+                                    var groups = _adminService.GetAllGroups();
                                     return Mapper.Map<IList<GroupViewModel>>(groups);
                                 })
                         .Execute();
@@ -48,9 +49,36 @@
                                 () =>
                                 {
                                     var loggedInUser = Session.GetValue<LoggedUserInfoDto>(SessionKey.Loggeduser);
-                                    var users = _userService.GetAllUsers(loggedInUser.GroupId);
+                                    var users = _adminService.GetAllUsers(loggedInUser.GroupId);
                                     return Mapper.Map<IList<UserViewModel>>(users);
                                 })
+                        .Execute();
+        }
+
+        [HttpGet]
+        public virtual ActionResult AddNewGroup()
+        {
+            return new ServiceAction(this)
+                        .Fetch(SessionKey.Empty)
+                        .WithPopup<GroupViewModel>(MVC.Admin.Views._addGroup,
+                                () =>
+                                {
+                                    return new GroupViewModel();
+                                })
+                        .Execute();
+        }
+
+        [HttpPost]
+        public virtual ActionResult SaveGroup(GroupViewModel groupViewModel)
+        {
+            return new ServiceAction(this)
+                        .Put(SessionKey.Empty)
+                        .WithCommand<bool>(() =>
+                            {
+                                return _adminService.AddGroup(groupViewModel.Name);
+                            })
+                        //.OnSuccess(MVC.Admin.Actions.Groups())
+                        //.OnFailure(MVC.Admin.Actions.Groups())
                         .Execute();
         }
     }
