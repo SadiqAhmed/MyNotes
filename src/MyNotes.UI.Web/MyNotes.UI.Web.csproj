@@ -346,6 +346,9 @@
     <None Include="Service References\AdminServiceRef\MyNotes.UI.Web.AdminServiceRef.GroupDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
+    <None Include="Service References\AdminServiceRef\MyNotes.UI.Web.AdminServiceRef.MessageResultDto.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="Service References\AdminServiceRef\MyNotes.UI.Web.AdminServiceRef.UserDto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

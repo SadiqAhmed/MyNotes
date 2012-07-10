@@ -12,18 +12,18 @@
         IList<GroupDto> GetAllGroups();
 
         [OperationContract]
-        IList<UserDto> GetAllUsers(Guid userId);
+        IList<UserDto> GetAllUsers(Guid groupId, bool isSysAccount);
 
         [OperationContract]
-        bool AddGroup(string name);
+        MessageResultDto AddGroup(string name);
 
         [OperationContract]
-        bool AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId);
+        MessageResultDto AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId);
 
         [OperationContract]
-        bool UpdateGroup(Guid id, string name);
+        MessageResultDto UpdateGroup(Guid id, string name);
 
         [OperationContract]
-        bool UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId);
+        MessageResultDto UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId);
     }
 }

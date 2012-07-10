@@ -15,4 +15,9 @@ handler.admin = function ($selector) {
         $(mynotes.Constants.PopupView).modal('hide');
         $.ajaxGet({ url: groupListUrl });
     });
+
+    $selector.bind('addUser', function () {
+        $(mynotes.Constants.PopupView).modal('hide');
+        $.ajaxGet({ url: userListUrl });
+    });
 };

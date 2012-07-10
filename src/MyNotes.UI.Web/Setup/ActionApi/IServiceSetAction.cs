@@ -2,10 +2,11 @@
 {
     using System;
     using System.Web.Mvc;
+    using MyNotes.UI.Web.AdminServiceRef;
 
     public interface IServiceSetAction
     {
-        IServiceSetAction WithCommand<TEntity>(Func<bool> serviceCommand)
+        IServiceSetAction WithCommand<TEntity>(Func<MessageResultDto> serviceCommand)
             where TEntity : new();
 
         IServiceSetAction OnSuccess(ActionResult actionResult, bool isFragmentAtion = true);

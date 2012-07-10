@@ -31,9 +31,9 @@
             return groupDtos;
         }
 
-        public bool AddGroup(string name)
+        public MessageResultDto AddGroup(string name)
         {
-            var result = false;
+            var result = new MessageResultDto();
 
             using (ISession session = _sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -41,14 +41,13 @@
                 IRepository<Group> groupRepository = new Repository<Group>(session);
                 groupRepository.Add(new Group { Name = name });
                 transaction.Commit();
-                result = true;
             }
             return result;
         }
 
-        public bool UpdateGroup(Guid id, string name)
+        public MessageResultDto UpdateGroup(Guid id, string name)
         {
-            var result = false;
+            var result = new MessageResultDto();
 
             using (ISession session = _sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -58,7 +57,6 @@
                 group.Name = name;
                 groupRepository.Update(group);
                 transaction.Commit();
-                result = true;
             }
             return result;
         }

@@ -6,14 +6,14 @@
 @using MyNotes.UI.Web.Setup.Common;
 
 <div id="addUser" >
-    @using (Ajax.BeginJqueryForm("frmAddUser", MVC.Admin.Actions.SaveGroup(), "addUser"))
+    @using (Ajax.BeginJqueryForm("frmAddUser", MVC.Admin.Actions.SaveUser(), "addUser"))
     { 
         <div class="modal-header">
             <a class="close" data-dismiss="modal">×</a>
             <h3>Add New User</h3>
         </div>
         <div class="modal-body">
-            @if (Session.GetValue<LoggedUserInfoDto>(SessionKey.LoggedUser).IsSystemAccount)
+            @if (Session.GetValue<LoggedUserInfoDto>(SessionKey.LoggedUser).IsSysAccount)
             { 
                 <div class="row center">
                     @Html.DropDownList("GroupId", (IEnumerable<SelectListItem>)ViewBag.Groups, new { @class = "input-xlarge" })

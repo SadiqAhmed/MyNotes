@@ -99,6 +99,7 @@
   <ItemGroup>
     <Compile Include="DataAccess\StorageProxies\GroupStorageProxy.cs" />
     <Compile Include="DataAccess\StorageProxies\UserStorageProxy.cs" />
+    <Compile Include="Dtos\MessageResultDto.cs" />
     <Compile Include="Dtos\UserDto.cs" />
     <Compile Include="Dtos\GroupDto.cs" />
     <Compile Include="Global.asax.cs">

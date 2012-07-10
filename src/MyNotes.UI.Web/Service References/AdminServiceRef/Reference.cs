@@ -247,6 +247,67 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         }
     }
     
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="MessageResultDto", Namespace="http://schemas.datacontract.org/2004/07/MyNotes.Backend.Dtos")]
+    [System.SerializableAttribute()]
+    public partial class MessageResultDto : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool HasErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MessageField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool HasError {
+            get {
+                return this.HasErrorField;
+            }
+            set {
+                if ((this.HasErrorField.Equals(value) != true)) {
+                    this.HasErrorField = value;
+                    this.RaisePropertyChanged("HasError");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Message {
+            get {
+                return this.MessageField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MessageField, value) != true)) {
+                    this.MessageField = value;
+                    this.RaisePropertyChanged("Message");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="AdminServiceRef.IAdminService")]
     public interface IAdminService {
@@ -255,19 +316,19 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         MyNotes.UI.Web.AdminServiceRef.GroupDto[] GetAllGroups();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/GetAllUsers", ReplyAction="http://tempuri.org/IAdminService/GetAllUsersResponse")]
-        MyNotes.UI.Web.AdminServiceRef.UserDto[] GetAllUsers(System.Guid userId);
+        MyNotes.UI.Web.AdminServiceRef.UserDto[] GetAllUsers(System.Guid groupId, bool isSysAccount);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddGroup", ReplyAction="http://tempuri.org/IAdminService/AddGroupResponse")]
-        bool AddGroup(string name);
+        MyNotes.UI.Web.AdminServiceRef.MessageResultDto AddGroup(string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddUser", ReplyAction="http://tempuri.org/IAdminService/AddUserResponse")]
-        bool AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
+        MyNotes.UI.Web.AdminServiceRef.MessageResultDto AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/UpdateGroup", ReplyAction="http://tempuri.org/IAdminService/UpdateGroupResponse")]
-        bool UpdateGroup(System.Guid id, string name);
+        MyNotes.UI.Web.AdminServiceRef.MessageResultDto UpdateGroup(System.Guid id, string name);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/UpdateUser", ReplyAction="http://tempuri.org/IAdminService/UpdateUserResponse")]
-        bool UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
+        MyNotes.UI.Web.AdminServiceRef.MessageResultDto UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -301,23 +362,23 @@ namespace MyNotes.UI.Web.AdminServiceRef {
             return base.Channel.GetAllGroups();
         }
         
-        public MyNotes.UI.Web.AdminServiceRef.UserDto[] GetAllUsers(System.Guid userId) {
-            return base.Channel.GetAllUsers(userId);
+        public MyNotes.UI.Web.AdminServiceRef.UserDto[] GetAllUsers(System.Guid groupId, bool isSysAccount) {
+            return base.Channel.GetAllUsers(groupId, isSysAccount);
         }
         
-        public bool AddGroup(string name) {
+        public MyNotes.UI.Web.AdminServiceRef.MessageResultDto AddGroup(string name) {
             return base.Channel.AddGroup(name);
         }
         
-        public bool AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
+        public MyNotes.UI.Web.AdminServiceRef.MessageResultDto AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
             return base.Channel.AddUser(firstname, lastname, nickname, username, password, groupId);
         }
         
-        public bool UpdateGroup(System.Guid id, string name) {
+        public MyNotes.UI.Web.AdminServiceRef.MessageResultDto UpdateGroup(System.Guid id, string name) {
             return base.Channel.UpdateGroup(id, name);
         }
         
-        public bool UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
+        public MyNotes.UI.Web.AdminServiceRef.MessageResultDto UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
             return base.Channel.UpdateUser(id, firstname, lastname, nickname, username, password, groupId);
         }
     }

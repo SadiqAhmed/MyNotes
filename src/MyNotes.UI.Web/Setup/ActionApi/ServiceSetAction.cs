@@ -4,13 +4,14 @@
     using System.Web.Mvc;
     using MyNotes.UI.Web.Setup.Common;
     using MvcBase.WebHelper.Mvc.Extensions;
+    using MyNotes.UI.Web.AdminServiceRef;
 
     public class ServiceSetAction : IServiceSetAction
     {
         private Controller _controller;
         private SessionKey _sessionKey;
 
-        private Func<bool> _serviceCommand;
+        private Func<MessageResultDto> _serviceCommand;
 
         private ActionResult _onSuccess;
         private bool _onSuccessIsFragmentAction;
@@ -26,7 +27,7 @@
             _sessionKey = sessionKey;
         }
 
-        public IServiceSetAction WithCommand<TEntity>(Func<bool> serviceCommand)
+        public IServiceSetAction WithCommand<TEntity>(Func<MessageResultDto> serviceCommand)
             where TEntity :new()
         {
             _serviceCommand = serviceCommand;
@@ -49,18 +50,18 @@
 
         public JsonResponseActionResult Execute()
         {
-            var commandSuccessfull = true;
+            var commandSuccessfull = new MessageResultDto();
             string redirectLink = null;
 
             commandSuccessfull = _serviceCommand();
             
-            if (commandSuccessfull && _onSuccess != null)
+            if (commandSuccessfull.HasError && _onSuccess != null)
             {
                 redirectLink = (_onSuccessIsFragmentAction ?
                     _controller.Url.UrlWithActionFragment(_onSuccess) :
                     _controller.Url.UrlWithAction(_onSuccess));
             }
-            else if(!commandSuccessfull && _onFailure!=null)
+            else if(!commandSuccessfull.HasError && _onFailure!=null)
             {
                 redirectLink = (_onFailureIsFragmentAction ?
                     _controller.Url.UrlWithActionFragment(_onFailure) :

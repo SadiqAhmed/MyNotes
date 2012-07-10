@@ -9,7 +9,7 @@
         {
             Map(x => x.Name)
                 .Not.Nullable();
-            Map(x => x.IsSystem)
+            Map(x => x.IsSysAccount)
                 .Not.Nullable();
             HasMany<User>(x => x.Users)
                 .Inverse()

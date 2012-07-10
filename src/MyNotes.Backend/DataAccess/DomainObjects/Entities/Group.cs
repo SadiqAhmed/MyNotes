@@ -23,6 +23,6 @@
         /// <summary>
         /// Gets or Sets the is system group
         /// </summary>
-        public virtual bool IsSystem { get; set; }
+        public virtual bool IsSysAccount { get; set; }
     }
 }

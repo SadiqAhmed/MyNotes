@@ -50,7 +50,7 @@
                                 () =>
                                 {
                                     var loggedInUser = Session.GetValue<LoggedUserInfoDto>(SessionKey.LoggedUser);
-                                    var users = _adminService.GetAllUsers(loggedInUser.GroupId);
+                                    var users = _adminService.GetAllUsers(loggedInUser.GroupId, loggedInUser.IsSysAccount);
                                     return Mapper.Map<IList<UserViewModel>>(users);
                                 })
                         .Execute();
@@ -74,7 +74,7 @@
         {
             return new ServiceAction(this)
                         .Put(SessionKey.Empty)
-                        .WithCommand<bool>(() =>
+                        .WithCommand<MessageResultDto>(() =>
                             {
                                 return _adminService.AddGroup(groupViewModel.Name);
                             })
@@ -102,9 +102,9 @@
         {
             return new ServiceAction(this)
                         .Put(SessionKey.Empty)
-                        .WithCommand<bool>(() =>
+                        .WithCommand<MessageResultDto>(() =>
                         {
-                            return _adminService.AddGroup(userViewModel.Name);
+                            return _adminService.AddUser(userViewModel.Firstname, userViewModel.Lastname, userViewModel.Nickname, userViewModel.Username, userViewModel.Password, userViewModel.GroupId);
                         })
                         .Execute();
         }

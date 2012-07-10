@@ -6,7 +6,7 @@
       <xs:element minOccurs="0" name="GroupId" type="ser:guid" />
       <xs:element minOccurs="0" name="GroupName" nillable="true" type="xs:string" />
       <xs:element minOccurs="0" name="Id" type="ser:guid" />
-      <xs:element minOccurs="0" name="IsSystemAccount" type="xs:boolean" />
+      <xs:element minOccurs="0" name="IsSysAccount" type="xs:boolean" />
       <xs:element minOccurs="0" name="Nickname" nillable="true" type="xs:string" />
     </xs:sequence>
   </xs:complexType>

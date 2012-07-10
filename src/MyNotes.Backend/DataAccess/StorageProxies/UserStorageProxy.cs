@@ -31,6 +31,20 @@
             return userDto;
         }
 
+        public IList<UserDto> GetAll()
+        {
+            IList<UserDto> userDtos = null;
+
+            using (ISession session = _sessionFactory.OpenSession())
+            {
+                IRepository<User> userRepository = new Repository<User>(session);
+                var users = userRepository.FindAll().List();
+                userDtos = Mapper.Map<IList<UserDto>>(users);
+            }
+
+            return userDtos;
+        }
+
         public IList<UserDto> GetAllInGroup(Guid groupId)
         {
             IList<UserDto> userDtos = null;
@@ -45,9 +59,9 @@
             return userDtos;
         }
 
-        public bool AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        public MessageResultDto AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId)
         {
-            var result = false;
+            var result = new MessageResultDto();
 
             using (ISession session = _sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -56,23 +70,33 @@
                 var group = groupRepository.FindOne(x => x.Id == groupId);
 
                 IRepository<User> userRepository = new Repository<User>(session);
-                userRepository.Add(new User { 
-                    FirstName = firstname, 
-                    LastName = lastname, 
-                    Nickname = nickname, 
-                    Username = username, 
-                    Password = password, 
-                    Group = group});
+                var existingUser = userRepository.FindOne(x => x.Username == username);
 
-                transaction.Commit();
-                result = true;
+                if (null == existingUser)
+                {
+                    userRepository.Add(new User
+                    {
+                        FirstName = firstname,
+                        LastName = lastname,
+                        Nickname = nickname,
+                        Username = username,
+                        Password = password,
+                        Group = group
+                    });
+
+                    transaction.Commit();
+                }
+                else
+                {
+                    result.ErrorMessage("User with same username already exists");
+                }
             }
             return result;
         }
 
-        public bool UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        public MessageResultDto UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId)
         {
-            var result = false;
+            var result = new MessageResultDto();
 
             using (ISession session = _sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
@@ -96,7 +120,6 @@
                 userRepository.Add(user);
 
                 transaction.Commit();
-                result = true;
             }
             return result;
         }
