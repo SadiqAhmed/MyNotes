@@ -1,1 +1,43 @@
-﻿
+﻿@model MyNotes.UI.Web.ViewModels.User.UserViewModel
+
+@using MyNotes.UI.Web.Setup.Extensions;
+@using MvcBase.WebHelper.Mvc.Extensions;
+@using MyNotes.UI.Web.UserServiceRef;
+@using MyNotes.UI.Web.Setup.Common;
+
+<div id="addUser" >
+    @using (Ajax.BeginJqueryForm("frmAddUser", MVC.Admin.Actions.SaveGroup(), "addUser"))
+    { 
+        <div class="modal-header">
+            <a class="close" data-dismiss="modal">×</a>
+            <h3>Add New User</h3>
+        </div>
+        <div class="modal-body">
+            @if (Session.GetValue<LoggedUserInfoDto>(SessionKey.LoggedUser).IsSystemAccount)
+            { 
+                <div class="row center">
+                    @Html.DropDownList("GroupId", (IEnumerable<SelectListItem>)ViewBag.Groups, new { @class = "input-xlarge" })
+                </div>
+            }
+            <div class="row center">
+                @Html.TextBoxFor(m => m.Firstname, new { placeholder = "First Name", @class = "input-xlarge" })
+            </div>
+            <div class="row center">
+                @Html.TextBoxFor(m => m.Lastname, new { placeholder = "Last Name", @class = "input-xlarge" })
+            </div>
+            <div class="row center">
+                @Html.TextBoxFor(m => m.Username, new { placeholder = "Username", @class = "input-xlarge" })
+            </div>
+            <div class="row center">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Password", @class = "input-xlarge" })
+            </div>
+            <div class="row center">
+                @Html.PasswordFor(m => m.Password, new { placeholder = "Confirm Password", @class = "input-xlarge" })
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" id="btnAddGroup" class="btn btn-success" value="Add" />
+            <a href="#" class="btn" data-dismiss="modal">Cancel</a>
+        </div>
+    }
+</div>

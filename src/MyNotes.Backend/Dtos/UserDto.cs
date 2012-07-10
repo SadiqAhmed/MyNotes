@@ -8,15 +8,21 @@
     {
         [DataMember]
         public Guid Id { get; set; }
+        
+        [DataMember]
+        public string FirstName { get; set; }
+
+        [DataMember]
+        public string LastName { get; set; }
+
+        [DataMember]
+        public string Nickname { get; set; }
 
         [DataMember]
         public string Username { get; set; }
         
         [DataMember]
-        public string Name { get; set; }
-
-        [DataMember]
-        public string Nickname { get; set; }
+        public string Password { get; set; }
 
         [DataMember]
         public Guid GroupId { get; set; }

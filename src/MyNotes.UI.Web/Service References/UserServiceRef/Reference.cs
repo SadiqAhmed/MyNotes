@@ -32,6 +32,9 @@ namespace MyNotes.UI.Web.UserServiceRef {
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private bool IsSystemAccountField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NicknameField;
         
         [global::System.ComponentModel.BrowsableAttribute(false)]
@@ -79,6 +82,19 @@ namespace MyNotes.UI.Web.UserServiceRef {
                 if ((this.IdField.Equals(value) != true)) {
                     this.IdField = value;
                     this.RaisePropertyChanged("Id");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public bool IsSystemAccount {
+            get {
+                return this.IsSystemAccountField;
+            }
+            set {
+                if ((this.IsSystemAccountField.Equals(value) != true)) {
+                    this.IsSystemAccountField = value;
+                    this.RaisePropertyChanged("IsSystemAccount");
                 }
             }
         }

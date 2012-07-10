@@ -10,6 +10,7 @@
     using MyNotes.UI.Web.Setup.Extensions;
     using MyNotes.UI.Web.ViewModels.User;
     using MyNotes.UI.Web.UserServiceRef;
+    using System.Linq;
 
     public partial class AdminController : Controller
     {
@@ -48,7 +49,7 @@
                         .WithContent<IList<UserViewModel>>(MVC.Admin.Views._users,
                                 () =>
                                 {
-                                    var loggedInUser = Session.GetValue<LoggedUserInfoDto>(SessionKey.Loggeduser);
+                                    var loggedInUser = Session.GetValue<LoggedUserInfoDto>(SessionKey.LoggedUser);
                                     var users = _adminService.GetAllUsers(loggedInUser.GroupId);
                                     return Mapper.Map<IList<UserViewModel>>(users);
                                 })
@@ -56,7 +57,7 @@
         }
 
         [HttpGet]
-        public virtual ActionResult AddNewGroup()
+        public virtual ActionResult AddGroup()
         {
             return new ServiceAction(this)
                         .Fetch(SessionKey.Empty)
@@ -77,8 +78,34 @@
                             {
                                 return _adminService.AddGroup(groupViewModel.Name);
                             })
-                        //.OnSuccess(MVC.Admin.Actions.Groups())
-                        //.OnFailure(MVC.Admin.Actions.Groups())
+                        .Execute();
+        }
+
+        [HttpGet]
+        public virtual ActionResult AddUser()
+        {
+            return new ServiceAction(this)
+                        .Fetch(SessionKey.Empty)
+                        .WithPopup<UserViewModel>(MVC.Admin.Views._addUser,
+                                () =>
+                                {
+                                    var groups = (from gp in _adminService.GetAllGroups()
+                                                  select new SelectListItem { Value = gp.Id.ToString(), Text = gp.Name }).ToList();
+                                    ViewData["Groups"] = groups;
+                                    return new UserViewModel();
+                                })
+                        .Execute();
+        }
+
+        [HttpPost]
+        public virtual ActionResult SaveUser(UserViewModel userViewModel)
+        {
+            return new ServiceAction(this)
+                        .Put(SessionKey.Empty)
+                        .WithCommand<bool>(() =>
+                        {
+                            return _adminService.AddGroup(userViewModel.Name);
+                        })
                         .Execute();
         }
     }

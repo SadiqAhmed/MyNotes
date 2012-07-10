@@ -100,6 +100,9 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string FirstNameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
         private System.Guid GroupIdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
@@ -109,10 +112,13 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         private System.Guid IdField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NameField;
+        private string LastNameField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string NicknameField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string PasswordField;
         
         [System.Runtime.Serialization.OptionalFieldAttribute()]
         private string UsernameField;
@@ -124,6 +130,19 @@ namespace MyNotes.UI.Web.AdminServiceRef {
             }
             set {
                 this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string FirstName {
+            get {
+                return this.FirstNameField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.FirstNameField, value) != true)) {
+                    this.FirstNameField = value;
+                    this.RaisePropertyChanged("FirstName");
+                }
             }
         }
         
@@ -167,14 +186,14 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         }
         
         [System.Runtime.Serialization.DataMemberAttribute()]
-        public string Name {
+        public string LastName {
             get {
-                return this.NameField;
+                return this.LastNameField;
             }
             set {
-                if ((object.ReferenceEquals(this.NameField, value) != true)) {
-                    this.NameField = value;
-                    this.RaisePropertyChanged("Name");
+                if ((object.ReferenceEquals(this.LastNameField, value) != true)) {
+                    this.LastNameField = value;
+                    this.RaisePropertyChanged("LastName");
                 }
             }
         }
@@ -188,6 +207,19 @@ namespace MyNotes.UI.Web.AdminServiceRef {
                 if ((object.ReferenceEquals(this.NicknameField, value) != true)) {
                     this.NicknameField = value;
                     this.RaisePropertyChanged("Nickname");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Password {
+            get {
+                return this.PasswordField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.PasswordField, value) != true)) {
+                    this.PasswordField = value;
+                    this.RaisePropertyChanged("Password");
                 }
             }
         }
@@ -227,6 +259,15 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddGroup", ReplyAction="http://tempuri.org/IAdminService/AddGroupResponse")]
         bool AddGroup(string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/AddUser", ReplyAction="http://tempuri.org/IAdminService/AddUserResponse")]
+        bool AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/UpdateGroup", ReplyAction="http://tempuri.org/IAdminService/UpdateGroupResponse")]
+        bool UpdateGroup(System.Guid id, string name);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IAdminService/UpdateUser", ReplyAction="http://tempuri.org/IAdminService/UpdateUserResponse")]
+        bool UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -266,6 +307,18 @@ namespace MyNotes.UI.Web.AdminServiceRef {
         
         public bool AddGroup(string name) {
             return base.Channel.AddGroup(name);
+        }
+        
+        public bool AddUser(string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
+            return base.Channel.AddUser(firstname, lastname, nickname, username, password, groupId);
+        }
+        
+        public bool UpdateGroup(System.Guid id, string name) {
+            return base.Channel.UpdateGroup(id, name);
+        }
+        
+        public bool UpdateUser(System.Guid id, string firstname, string lastname, string nickname, string username, string password, System.Guid groupId) {
+            return base.Channel.UpdateUser(id, firstname, lastname, nickname, username, password, groupId);
         }
     }
 }

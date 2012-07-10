@@ -40,5 +40,20 @@
         {
             return (new GroupStorageProxy(_sessionFactory)).AddGroup(name);
         }
+
+        public bool AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        {
+            return (new UserStorageProxy(_sessionFactory)).AddUser(firstname, lastname, nickname, username, password, groupId);
+        }
+
+        public bool UpdateGroup(Guid id, string name)
+        {
+            return (new GroupStorageProxy(_sessionFactory)).UpdateGroup(id, name);
+        }
+
+        public bool UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        {
+            return (new UserStorageProxy(_sessionFactory)).UpdateUser(id, firstname, lastname, nickname, username, password, groupId);
+        }
     }
 }

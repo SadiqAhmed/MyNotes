@@ -42,6 +42,11 @@ namespace MyNotes.UI.Web.Controllers {
         public System.Web.Mvc.ActionResult SaveGroup() {
             return new T4MVC_ActionResult(Area, Name, ActionNames.SaveGroup);
         }
+        [NonAction]
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public System.Web.Mvc.ActionResult SaveUser() {
+            return new T4MVC_ActionResult(Area, Name, ActionNames.SaveUser);
+        }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public AdminController Actions { get { return MVC.Admin; } }
@@ -60,8 +65,10 @@ namespace MyNotes.UI.Web.Controllers {
             public readonly string Index = "Index";
             public readonly string Groups = "Groups";
             public readonly string Users = "Users";
-            public readonly string AddNewGroup = "AddNewGroup";
+            public readonly string AddGroup = "AddGroup";
             public readonly string SaveGroup = "SaveGroup";
+            public readonly string AddUser = "AddUser";
+            public readonly string SaveUser = "SaveUser";
         }
 
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -69,8 +76,10 @@ namespace MyNotes.UI.Web.Controllers {
             public const string Index = "Index";
             public const string Groups = "Groups";
             public const string Users = "Users";
-            public const string AddNewGroup = "AddNewGroup";
+            public const string AddGroup = "AddGroup";
             public const string SaveGroup = "SaveGroup";
+            public const string AddUser = "AddUser";
+            public const string SaveUser = "SaveUser";
         }
 
 
@@ -80,6 +89,13 @@ namespace MyNotes.UI.Web.Controllers {
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
         public class ActionParamsClass_SaveGroup {
             public readonly string groupViewModel = "groupViewModel";
+        }
+        static readonly ActionParamsClass_SaveUser s_params_SaveUser = new ActionParamsClass_SaveUser();
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public ActionParamsClass_SaveUser SaveUserParams { get { return s_params_SaveUser; } }
+        [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
+        public class ActionParamsClass_SaveUser {
+            public readonly string userViewModel = "userViewModel";
         }
         static readonly ViewNames s_views = new ViewNames();
         [GeneratedCode("T4MVC", "2.0"), DebuggerNonUserCode]
@@ -113,14 +129,25 @@ namespace MyNotes.UI.Web.Controllers {
             return callInfo;
         }
 
-        public override System.Web.Mvc.ActionResult AddNewGroup() {
-            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AddNewGroup);
+        public override System.Web.Mvc.ActionResult AddGroup() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AddGroup);
             return callInfo;
         }
 
         public override System.Web.Mvc.ActionResult SaveGroup(MyNotes.UI.Web.ViewModels.Admin.GroupViewModel groupViewModel) {
             var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.SaveGroup);
             callInfo.RouteValueDictionary.Add("groupViewModel", groupViewModel);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult AddUser() {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.AddUser);
+            return callInfo;
+        }
+
+        public override System.Web.Mvc.ActionResult SaveUser(MyNotes.UI.Web.ViewModels.User.UserViewModel userViewModel) {
+            var callInfo = new T4MVC_ActionResult(Area, Name, ActionNames.SaveUser);
+            callInfo.RouteValueDictionary.Add("userViewModel", userViewModel);
             return callInfo;
         }
 

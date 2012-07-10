@@ -32,7 +32,7 @@
                         .Fetch(SessionKey.Empty)
                         .WithResult<LoggedUserInfoDto>(() => {
                                 var loggedUserInfo = _userService.Authenticate(viewmodel.Username, viewmodel.Password);
-                                Session.SetValue(SessionKey.Loggeduser, loggedUserInfo);
+                                Session.SetValue(SessionKey.LoggedUser, loggedUserInfo);
                                 return loggedUserInfo;
                             })
                         .Execute();

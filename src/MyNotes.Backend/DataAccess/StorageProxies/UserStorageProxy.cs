@@ -44,5 +44,61 @@
 
             return userDtos;
         }
+
+        public bool AddUser(string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        {
+            var result = false;
+
+            using (ISession session = _sessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                IRepository<Group> groupRepository = new Repository<Group>(session);
+                var group = groupRepository.FindOne(x => x.Id == groupId);
+
+                IRepository<User> userRepository = new Repository<User>(session);
+                userRepository.Add(new User { 
+                    FirstName = firstname, 
+                    LastName = lastname, 
+                    Nickname = nickname, 
+                    Username = username, 
+                    Password = password, 
+                    Group = group});
+
+                transaction.Commit();
+                result = true;
+            }
+            return result;
+        }
+
+        public bool UpdateUser(Guid id, string firstname, string lastname, string nickname, string username, string password, Guid groupId)
+        {
+            var result = false;
+
+            using (ISession session = _sessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                IRepository<User> userRepository = new Repository<User>(session);
+                var user = userRepository.FindOne(x => x.Id == id);
+
+                if (user.Group.Id == groupId)
+                {
+                    IRepository<Group> groupRepository = new Repository<Group>(session);
+                    var group = groupRepository.FindOne(x => x.Id == groupId);
+                    user.Group = group;
+                }
+
+                user.FirstName = firstname;
+                user.LastName = lastname;
+                user.Nickname = nickname;
+                user.Username = username;
+                user.Password = password;
+
+                userRepository.Add(user);
+
+                transaction.Commit();
+                result = true;
+            }
+            return result;
+        }
     }
 }

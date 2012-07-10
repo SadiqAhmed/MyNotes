@@ -8,7 +8,7 @@ handler.admin = function ($selector) {
     });
 
     $selector.find('#btnNewUser').bind('click', function () {
-        alert('new user clicked');
+        $.ajaxGet({ url: addUserUrl });
     });
 
     $selector.bind('addGroup', function () {

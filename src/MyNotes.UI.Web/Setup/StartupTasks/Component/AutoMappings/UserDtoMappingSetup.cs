@@ -9,7 +9,8 @@
     {
         public void Setup()
         {
-            Mapper.CreateMap<UserDto, UserViewModel>();
+            Mapper.CreateMap<UserDto, UserViewModel>()
+                .ForMember(d => d.Name, o => o.Ignore());
         }
     }
 }

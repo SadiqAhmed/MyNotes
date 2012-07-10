@@ -9,7 +9,7 @@
     public enum SessionKey
     {
         Empty,
-        Loggeduser,
+        LoggedUser,
         GroupList,
     }
 }

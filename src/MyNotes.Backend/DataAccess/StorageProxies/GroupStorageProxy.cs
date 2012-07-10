@@ -1,5 +1,6 @@
 ﻿namespace MyNotes.Backend.DataAccess.StorageProxies
 {
+    using System;
     using AutoMapper;
     using NHibernate;
     using MyNotes.Backend.DataAccess.DomainObjects.Entities;
@@ -32,15 +33,34 @@
 
         public bool AddGroup(string name)
         {
+            var result = false;
+
             using (ISession session = _sessionFactory.OpenSession())
             using (ITransaction transaction = session.BeginTransaction())
             {
                 IRepository<Group> groupRepository = new Repository<Group>(session);
                 groupRepository.Add(new Group { Name = name });
                 transaction.Commit();
-                return true;
+                result = true;
             }
-            return false;
+            return result;
+        }
+
+        public bool UpdateGroup(Guid id, string name)
+        {
+            var result = false;
+
+            using (ISession session = _sessionFactory.OpenSession())
+            using (ITransaction transaction = session.BeginTransaction())
+            {
+                IRepository<Group> groupRepository = new Repository<Group>(session);
+                var group = groupRepository.FindOne(x => x.Id == id);
+                group.Name = name;
+                groupRepository.Update(group);
+                transaction.Commit();
+                result = true;
+            }
+            return result;
         }
     }
 }

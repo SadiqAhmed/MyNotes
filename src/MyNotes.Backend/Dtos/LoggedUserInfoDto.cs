@@ -17,5 +17,8 @@
 
         [DataMember]
         public string GroupName { get; set; }
+
+        [DataMember]
+        public bool IsSystemAccount { get; set; }
     }
 }
